@@ -25,6 +25,7 @@ namespace IPOkemon
         public MainPage()
         {
             this.InitializeComponent();
+            this.frame.Navigate(typeof(MapPage));
         }
     }
 }

@@ -22,10 +22,30 @@ namespace IPOkemon
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        List<Pokemon> pokemons = new List<Pokemon>();
+
+        
         public MainPage()
         {
             this.InitializeComponent();
-            this.frame.Navigate(typeof(MapPage));
+
+            Pokemon azumarill = new Pokemon("Azumarill", 40, 90.0, "Agua", true, "Azumarill tiene unas orejas enormes, indispensables" +
+            " para hacer de sensores. Al aguzar el oído, este Pokémon puede identificar qué tipo de presa tiene cerca. Puede " +
+            "detectarlo hasta en ríos de fuertes y rápidas corrientes.", new Uri("ms-appx:///Assets/azumarill.png"));
+
+            Pokemon articuno = new Pokemon("Articuno", 56, 42.0, "Hielo", false, "Articuno es un Pokémon pájaro legendario que puede " +
+                "controlar el hielo. El batir de sus alas congela el aire. Dicen que consigue hacer que nieve cuando vuela.", new Uri("ms-appx:///Assets/articuno.png"));
+
+            pokemons.Add(azumarill);
+            pokemons.Add(articuno);
+
+            this.frame.Navigate(typeof(MapPage), this);
         }
+
+        public List<Pokemon> GetPokemons()
+        {
+            return pokemons;
+        }
+
     }
 }

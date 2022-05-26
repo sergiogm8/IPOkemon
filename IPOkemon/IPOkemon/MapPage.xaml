@@ -16,7 +16,9 @@
            ZoomInteractionMode="Disabled"
                          LandmarksVisible="False"
                          BusinessLandmarksVisible="False"
-           MapServiceToken="cPaNxekJD0Iyjh7kOLPM~MRQgNT3cxA6yplt-dbijWg~Av0OOR4_QSw39285dyyva17SA22PKJ1R6QGFQzwO_wr20XyF7lPDSN66l0NfKVx1"/>
+                         
+           MapServiceToken="cPaNxekJD0Iyjh7kOLPM~MRQgNT3cxA6yplt-dbijWg~Av0OOR4_QSw39285dyyva17SA22PKJ1R6QGFQzwO_wr20XyF7lPDSN66l0NfKVx1" XYFocusKeyboardNavigation="Enabled" MapElementClick="MyMap_MapElementClick" TiltInteractionMode="Disabled" RotateInteractionMode="Disabled"/>
 
+        <Image Source="Assets/personaje.png" Stretch="None"/>
     </Grid>
 </Page>

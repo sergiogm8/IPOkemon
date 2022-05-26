@@ -149,6 +149,7 @@
     <Content Include="Assets\pokeball.png" />
     <Content Include="Assets\pokestop.png" />
     <Content Include="Assets\pokestop_disabled.png" />
+    <Content Include="Assets\rango.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

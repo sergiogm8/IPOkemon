@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IPOkemon
 {
-    class Pokemon
+    public class Pokemon
     {
         public string nombre { get; set; }
         public int nivel { get; set; }

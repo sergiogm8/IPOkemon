@@ -32,11 +32,34 @@ namespace IPOkemon
         List<MapElement> pokeparadas = new List<MapElement>();
         List<MapElement> pokemonsMapa = new List<MapElement>();
         MainPage padre;
+        List<Pokemon> pokemons;
+        List<string> listaNombresPokemon = new List<string>();
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            padre = (MainPage)e.Parameter;
+        }
+
 
         public MapPage()
         {
             this.InitializeComponent();
+            this.Loaded += MapPage_Loaded; 
+        }
+
+        private void MapPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            pokemons = padre.pokemons;
+            popularListaNombresPokemon();
             startMap();
+        }
+
+        private void popularListaNombresPokemon()
+        {
+            foreach (var pokemon in pokemons) {
+                listaNombresPokemon.Add(pokemon.nombre.ToLower());
+            };            
         }
 
         private void startMap()
@@ -58,19 +81,46 @@ namespace IPOkemon
 
         private void mostrarPokemons()
         {
-            var pokemons = padre.GetPokemons();
-            generarPokemonEnMapa(pokemons[0], 38.98628743281845, -3.930223541748632);
+            foreach (Pokemon pokemon in pokemons){
+                if (!pokemon.capturado)
+                {
+                    float [] coords = generarCoordenadas();
+                    generarPokemonEnMapa(pokemon, coords[0], coords[1]);
+                }
+            };
 
             var PokemonsLayer = new MapElementsLayer
             {
                 ZIndex = 2,
-                MapElements = pokemonsMapa
+                MapElements = pokemonsMapa,
             };
 
             this.MyMap.Layers.Add(PokemonsLayer);
         }
 
-        private void generarPokemonEnMapa(Pokemon pokemon, double latitud, double longitud)
+        private float[] generarCoordenadas()
+        {
+            /// <summary>
+            /// Genera coordenadas aleatorias en Ciudad Real
+            /// </summary>
+
+            float latitudMin = (float)38.97074;
+            float latitudMax = (float)38.99677;
+
+            float longitudMin = (float)-3.93978;
+            float longitudMax = (float)-3.91321;
+
+            Random random = new Random();
+            double latitud = (random.NextDouble() * (latitudMax - latitudMin) + latitudMin);
+            double longitud = (random.NextDouble() * (longitudMax - longitudMin) + longitudMin);
+
+            float[] coords = { (float)latitud, (float)longitud };
+
+            return coords;
+
+        }
+
+        private void generarPokemonEnMapa(Pokemon pokemon, float latitud, float longitud)
         {
             var imagenPokemon = RandomAccessStreamReference.CreateFromUri(pokemon.sprite);
             BasicGeoposition position = new BasicGeoposition { Latitude = latitud, Longitude = longitud };
@@ -82,6 +132,7 @@ namespace IPOkemon
                 NormalizedAnchorPoint = new Point(0.5, 1.0),
                 ZIndex = 0,
                 Image = imagenPokemon,
+                Tag = pokemon.nombre.ToLower(),
             };
 
             pokemonsMapa.Add(pokemonIcon);
@@ -113,7 +164,8 @@ namespace IPOkemon
             var PokeparadasLayer = new MapElementsLayer
             {
                 ZIndex = 1,
-                MapElements = pokeparadas
+                MapElements = pokeparadas,
+                
             };
 
             this.MyMap.Layers.Add(PokeparadasLayer);
@@ -131,7 +183,8 @@ namespace IPOkemon
                 NormalizedAnchorPoint = new Point(0.5, 1.0),
                 ZIndex = 0,
                 Image = imagenPokeparada,
-                Title = titulo
+                Title = titulo,
+                Tag = "pokeparada"
             };
 
             pokeparadas.Add(pokeparada);
@@ -170,21 +223,59 @@ namespace IPOkemon
 
         private async void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
         {
+            var elementos = args.MapElements;
+            string tag = "";
+            bool esPokemon = false;
+            foreach (var elemento in elementos)
+            {
+                tag = (string)elemento.Tag;
+            }
+
+            if (listaNombresPokemon.Contains(tag)) {esPokemon = true; } //sabemos si el elemento clickado es un pokemon si la lista de pokemons contiene el tag
+
             if (estaCerca(args.Location.Position.Latitude, args.Location.Position.Longitude))
             {
-                var dialog = new MessageDialog("Hi!");
-                await dialog.ShowAsync();
+                if (esPokemon)
+                {
+                    int posPokemon = 0;
+                    for (int i=0; i< pokemons.Count(); i++)
+                    {
+                        if (tag == pokemons[i].nombre) { posPokemon = i; }
+                    }
+
+                    padre.navegarAPagina(tag + "_capturar", pokemons[posPokemon]);
+
+                }
+                else
+                {
+
+                }
 
             }
             else
             {
-                ContentDialog dialog = new ContentDialog {
-                    Title = "Pokeparada no alcanzable",
-                    Content = "¡Debes estar más cerca!",
-                    CloseButtonText = "Ok",
-                    RequestedTheme = (ElementTheme)0,
-                };
-                await dialog.ShowAsync();
+                if (esPokemon)
+                {
+                    ContentDialog dialog = new ContentDialog
+                    {
+                        Title = "Pokemon no alcanzable",
+                        Content = "¡El pokemon está demasiado lejos! Acércate más",
+                        CloseButtonText = "Ok",
+                        RequestedTheme = (ElementTheme)0,
+                    };
+                    await dialog.ShowAsync();
+                }
+                else
+                {
+                    ContentDialog dialog = new ContentDialog
+                    {
+                        Title = "Pokeparada no alcanzable",
+                        Content = "¡Debes estar más cerca!",
+                        CloseButtonText = "Ok",
+                        RequestedTheme = (ElementTheme)0,
+                    };
+                    await dialog.ShowAsync();
+                }
             }
         }
 
@@ -208,11 +299,6 @@ namespace IPOkemon
             }
 
             return estaCerca;
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            padre = (MainPage)e.Parameter;
         }
 
     }

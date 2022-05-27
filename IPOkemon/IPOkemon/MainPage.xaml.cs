@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PokemonUWP;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +23,14 @@ namespace IPOkemon
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        List<Pokemon> pokemons = new List<Pokemon>();
+        public List<Pokemon> pokemons = new List<Pokemon>();
 
         
         public MainPage()
         {
             this.InitializeComponent();
 
-            Pokemon azumarill = new Pokemon("Azumarill", 40, 90.0, "Agua", true, "Azumarill tiene unas orejas enormes, indispensables" +
+            Pokemon azumarill = new Pokemon("Azumarill", 40, 90.0, "Agua", false, "Azumarill tiene unas orejas enormes, indispensables" +
             " para hacer de sensores. Al aguzar el oído, este Pokémon puede identificar qué tipo de presa tiene cerca. Puede " +
             "detectarlo hasta en ríos de fuertes y rápidas corrientes.", new Uri("ms-appx:///Assets/azumarill.png"));
 
@@ -39,12 +40,29 @@ namespace IPOkemon
             pokemons.Add(azumarill);
             pokemons.Add(articuno);
 
-            this.frame.Navigate(typeof(MapPage), this);
+            navegarAPagina("mapa");
         }
 
-        public List<Pokemon> GetPokemons()
+        public void navegarAPagina(string pagina, object args = null)
         {
-            return pokemons;
+            switch (pagina)
+            {
+                case "inicio":
+                    break;
+                case "mapa":
+                    this.frame.Navigate(typeof(MapPage), this);
+                    break;
+                case "pokedex":
+                    break;
+                case "configuracion":
+                    break;
+                case "azumarill_capturar":
+                    this.frame.Navigate(typeof(AzumarillPage));
+                    break;
+                case "articuno_capturar":
+                    this.frame.Navigate(typeof(ucAzumarill), args);
+                    break;
+            }
         }
 
     }

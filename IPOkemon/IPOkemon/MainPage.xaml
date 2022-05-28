@@ -10,8 +10,68 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Frame x:Name="frame">
-        </Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Border Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button x:Name="btMenu" Margin="5" Click="flipMenu">
+                <FontIcon Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets"/>
+            </Button>
+        </Border>
+
+        <SplitView x:Name="sView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" CompactPaneLength="30" OpenPaneLength="250" DisplayMode="CompactInline" IsPaneOpen="True">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <SymbolIcon Grid.Row="0" Grid.Column="0" Margin="5" Symbol="Home"/>
+                    <Image Grid.Row="1" Grid.Column="0" Margin="5" Source="Assets\ic_pokeball_oscuro.png"/>
+                    <Image Grid.Row="2" Grid.Column="0" Margin="5" Source="Assets\ic_pokedex_oscuro.png"/>
+                    <SymbolIcon Grid.Row="3" Grid.Column="0" Margin="5" Symbol="Setting"/>
+                    <Button x:Name="btnInicio" Grid.Row="0" Grid.Column="1" Content="Inicio" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" PointerReleased="btnInicio_PointerReleased"/>
+                    <Button x:Name="btnCapturar"  Grid.Row="1" Grid.Column="1" Content="Capturar Pokemons" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" PointerReleased="btnCapturar_PointerReleased" />
+                    <Button x:Name="btnPokedex" Grid.Row="2" Grid.Column="1" Content="PokeDex" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+                    <Button x:Name="btnConfig" Grid.Row="3" Grid.Column="1" Content="Configuración" Height="50"  HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Margin="0,0,0,0"/>
+                </Grid>
+            </SplitView.Pane>
+            <Grid>
+                <Frame x:Name="frame" Grid.Row="0" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="100*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="1" Grid.Column="1" Source="Assets\personaje.png" Height="150" Width="150" Margin="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25" Text="Bienvenido a IPOkemon" FontSize="40" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Text="Ultimos avistamientos" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Text="Entrena a estos pokemon!" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+        </SplitView>
     </Grid>
 </Page>

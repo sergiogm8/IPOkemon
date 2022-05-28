@@ -119,8 +119,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AzumarillPage.xaml.cs">
-      <DependentUpon>AzumarillPage.xaml</DependentUpon>
+    <Compile Include="CapturarPage.xaml.cs">
+      <DependentUpon>CapturarPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -130,9 +130,10 @@
     </Compile>
     <Compile Include="Pokemon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucAzumarill.xaml.cs">
-      <DependentUpon>ucAzumarill.xaml</DependentUpon>
+    <Compile Include="ucAzumarillCapturar.xaml.cs">
+      <DependentUpon>ucAzumarillCapturar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ucArticunoCapturar.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -145,6 +146,7 @@
     <Content Include="Assets\charmander.png" />
     <Content Include="Assets\entrenador2.png" />
     <Content Include="Assets\entrenador3.png" />
+    <Content Include="Assets\fondos\fondo_articuno.png" />
     <Content Include="Assets\fondos\paisaje.jpg" />
     <Content Include="Assets\gengar.png" />
     <Content Include="Assets\ic_pokeball_claro.png" />
@@ -158,6 +160,7 @@
     <Content Include="Assets\pokestop.png" />
     <Content Include="Assets\pokestop_disabled.png" />
     <Content Include="Assets\rango.png" />
+    <Content Include="Assets\snorlax.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -172,7 +175,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AzumarillPage.xaml">
+    <Page Include="CapturarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,7 +187,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ucAzumarill.xaml">
+    <Page Include="ucAzumarillCapturar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucArticunocapturar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

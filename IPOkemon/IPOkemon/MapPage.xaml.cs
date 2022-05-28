@@ -122,7 +122,7 @@ namespace IPOkemon
 
         private void generarPokemonEnMapa(Pokemon pokemon, float latitud, float longitud)
         {
-            var imagenPokemon = RandomAccessStreamReference.CreateFromUri(pokemon.sprite);
+            var imagenPokemon = RandomAccessStreamReference.CreateFromUri(new Uri(pokemon.sprite));
             BasicGeoposition position = new BasicGeoposition { Latitude = latitud, Longitude = longitud };
             Geopoint geopoint = new Geopoint(position);
 
@@ -240,11 +240,12 @@ namespace IPOkemon
                     int posPokemon = 0;
                     for (int i=0; i< pokemons.Count(); i++)
                     {
-                        if (tag == pokemons[i].nombre) { posPokemon = i; }
+                        if (tag == pokemons[i].nombre.ToLower()) { posPokemon = i; break; }
                     }
-
-                    padre.navegarAPagina(tag + "_capturar", pokemons[posPokemon]);
-
+                    List<object> argsToPass = new List<object>();
+                    argsToPass.Add(pokemons[posPokemon]); //0
+                    argsToPass.Add(padre); //1
+                    padre.navegarAPagina("capturar", argsToPass);
                 }
                 else
                 {

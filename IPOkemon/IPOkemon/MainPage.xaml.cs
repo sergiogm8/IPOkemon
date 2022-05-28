@@ -25,6 +25,8 @@ namespace IPOkemon
         public MainPage()
         {
             this.InitializeComponent();
+            frame.Navigate(typeof(PokedexPage));
+            
         }
     }
 }

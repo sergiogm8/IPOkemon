@@ -125,6 +125,10 @@
     <Compile Include="MapPage.xaml.cs">
       <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PokedexPage.xaml.cs">
+      <DependentUpon>PokedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +137,23 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\articuno.png" />
+    <Content Include="Assets\azumarill.png" />
+    <Content Include="Assets\charmander.png" />
+    <Content Include="Assets\entrenador2.png" />
+    <Content Include="Assets\entrenador3.png" />
+    <Content Include="Assets\gengar.png" />
+    <Content Include="Assets\ic_pokeball_claro.png" />
+    <Content Include="Assets\ic_pokeball_oscuro.png" />
+    <Content Include="Assets\ic_pokedex_claro.png" />
+    <Content Include="Assets\ic_pokedex_oscuro.png" />
+    <Content Include="Assets\jigglypuff.png" />
+    <Content Include="Assets\personaje.png" />
+    <Content Include="Assets\pikachu.png" />
+    <Content Include="Assets\pokeball.png" />
+    <Content Include="Assets\pokestop.png" />
+    <Content Include="Assets\pokestop_disabled.png" />
+    <Content Include="Assets\rango.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -152,6 +173,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokedexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,6 +25,12 @@ namespace IPOkemon
 
         public List<Pokemon> pokemons = new List<Pokemon>();
 
+        public static Pokemon selectedPokemon;
+
+        public static Frame frame;
+
+        public static GridView gv;
+
         public PokedexPage()
         {
             this.InitializeComponent();
@@ -39,11 +45,6 @@ namespace IPOkemon
             pokemons.Add(azumarill);
             pokemons.Add(articuno);
         }
-
-        //private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-
-        //}
 
         private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
@@ -77,6 +78,16 @@ namespace IPOkemon
         {
             var pokemon = args.SelectedItem as Pokemon;
             sender.Text = pokemon.nombre;
+        }
+
+        public void Pokemon_Click(Object sender, ItemClickEventArgs e)
+        { 
+            selectedPokemon = (Pokemon)e.ClickedItem;
+            frame = pokeinfo;
+            gv = gvPokemons;
+            pokeinfo.Visibility = Visibility.Visible;
+            pokeinfo.Navigate(typeof(DetallePokemon), this);
+            Grid.SetColumnSpan(gvPokemons,2);
         }
 
     }

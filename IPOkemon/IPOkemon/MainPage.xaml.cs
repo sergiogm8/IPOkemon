@@ -1,4 +1,4 @@
-﻿using PokemonUWP;
+﻿using IPOkemon;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +30,7 @@ namespace IPOkemon
         {
             this.InitializeComponent();
 
-            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(900, 700));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
 
             this.Loaded += MainPage_Loaded;
@@ -87,7 +87,7 @@ namespace IPOkemon
             switch (pagina)
             {
                 case "inicio":
-                    this.frame.Navigate(typeof(MainPage));
+                    this.frame.Navigate(typeof(HomePage));
                     break;
                 case "mapa":
                     this.frame.Navigate(typeof(MapPage), this);
@@ -102,14 +102,15 @@ namespace IPOkemon
             }
         }
 
-        private void btnInicio_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            navegarAPagina("inicio");
-        }
 
-        private void btnCapturar_PointerReleased(object sender, PointerRoutedEventArgs e)
+        private void btnCapturar_Click(object sender, RoutedEventArgs e)
         {
             navegarAPagina("mapa");
+        }
+
+        private void btnInicio_Click(object sender, RoutedEventArgs e)
+        {
+            navegarAPagina("inicio");
         }
     }
 }

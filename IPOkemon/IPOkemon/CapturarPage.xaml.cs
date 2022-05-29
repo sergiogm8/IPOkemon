@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using PokemonUWP;
+using IPOkemon;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -50,6 +50,13 @@ namespace IPOkemon
                     ucArticuno.HorizontalAlignment = HorizontalAlignment.Center;
                     this.grid.Children.Add(ucArticuno);
                     break;
+
+                case "snorlax":
+                    ucSnorlaxCapturar ucSnorlax = new ucSnorlaxCapturar();
+                    ucSnorlax.VerticalAlignment = VerticalAlignment.Center;
+                    ucSnorlax.HorizontalAlignment = HorizontalAlignment.Center;
+                    this.grid.Children.Add(ucSnorlax);
+                    break;
             }
         }
 
@@ -81,6 +88,10 @@ namespace IPOkemon
 
                     case "articuno":
                         foreach (ucArticunoCapturar uc in this.grid.Children) { uc.volverACapturar(); }
+                        break;
+
+                    case "snorlax":
+                        foreach (ucSnorlaxCapturar uc in this.grid.Children) { uc.volverACapturar(); }
                         break;
                 }
             }

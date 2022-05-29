@@ -883,7 +883,7 @@
 
         <Canvas x:Name="canvas" Grid.Row="2" Grid.Column="1" >
             <Image x:Name="imgPokeball" Source="Assets/pokeball.png" Width="100" Height="100"
-                ManipulationMode="TranslateX, TranslateY" PointerPressed="imgPokeball_PointerPressed" Canvas.Left="495" Canvas.Top="655">
+                ManipulationMode="TranslateX, TranslateY" Canvas.Left="495" Canvas.Top="655" PointerReleased="imgPokeball_PointerReleased">
                 <Image.RenderTransform>
                     <CompositeTransform x:Name="mytransform" />
                 </Image.RenderTransform>

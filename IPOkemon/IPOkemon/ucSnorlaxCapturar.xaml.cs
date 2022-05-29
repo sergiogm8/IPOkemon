@@ -11,22 +11,40 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace IPOkemon
 {
-    public sealed partial class ucArticunoCapturar : UserControl
+    public sealed partial class ucSnorlaxCapturar : UserControl
     {
-        public ucArticunoCapturar()
+        public ucSnorlaxCapturar()
         {
             this.InitializeComponent();
-            Storyboard sbVolar = (Storyboard)this.Resources["Volar"];
-            sbVolar.Begin();
+            saludar();
         }
-    
+
+        private void eventoMoverse(object sender, object e)
+        {
+            Movimiento.Begin();
+        }
+
+        private void saludar()
+        {
+            Saludar.Begin();
+        }
+
+        private void derrotado()
+        {
+            noLive.Begin();
+        }
+
+        private void imgPokeball_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            sbCapturar.Begin();
+        }
+
         private void sbCapturar_Completed(object sender, object e)
         {
             Grid parentGrid = (Grid)this.Parent;
@@ -37,11 +55,6 @@ namespace IPOkemon
         public void volverACapturar()
         {
             sbRestaurar.Begin();
-        }
-
-        private void imgPokeball_PointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            sbCapturar.Begin();
         }
     }
 }

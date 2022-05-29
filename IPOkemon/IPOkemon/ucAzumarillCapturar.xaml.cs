@@ -19,7 +19,7 @@ using IPOkemon;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace PokemonUWP
+namespace IPOkemon
 {
     public sealed partial class ucAzumarillCapturar : UserControl
     {
@@ -178,12 +178,6 @@ namespace PokemonUWP
             this.sbMoverOrejaIzq.Stop();
         }
 
-
-        private void imgPokeball_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            startCapturar();
-        }
-
         private void sbCapturar_Completed(object sender, object e)
         {
             Grid parentGrid = (Grid)this.Parent;
@@ -196,5 +190,9 @@ namespace PokemonUWP
             sbRestaurar.Begin();   
         }
 
+        private void imgPokeball_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            startCapturar();
+        }
     }
 }

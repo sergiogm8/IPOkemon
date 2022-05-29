@@ -122,6 +122,9 @@
     <Compile Include="CapturarPage.xaml.cs">
       <DependentUpon>CapturarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -129,11 +132,17 @@
       <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pokemon.cs" />
+    <Compile Include="PokeparadaPage.xaml.cs">
+      <DependentUpon>PokeparadaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucAzumarillCapturar.xaml.cs">
       <DependentUpon>ucAzumarillCapturar.xaml</DependentUpon>
     </Compile>
     <Compile Include="ucArticunoCapturar.xaml.cs" />
+    <Compile Include="ucSnorlaxCapturar.xaml.cs">
+      <DependentUpon>ucSnorlaxCapturar.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -147,7 +156,9 @@
     <Content Include="Assets\entrenador2.png" />
     <Content Include="Assets\entrenador3.png" />
     <Content Include="Assets\fondos\fondo_articuno.png" />
+    <Content Include="Assets\fondos\fondo_snorlax.jpg" />
     <Content Include="Assets\fondos\paisaje.jpg" />
+    <Content Include="Assets\fondos\fondo_pokeparada.jpg" />
     <Content Include="Assets\gengar.png" />
     <Content Include="Assets\ic_pokeball_claro.png" />
     <Content Include="Assets\ic_pokeball_oscuro.png" />
@@ -179,11 +190,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokeparadaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,6 +213,10 @@
     <Page Include="ucArticunocapturar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucSnorlaxCapturar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

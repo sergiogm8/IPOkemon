@@ -25,6 +25,13 @@
         <Image Grid.Row="1" Grid.Column="1" Source="Assets\personaje.png" Height="150" Width="150" HorizontalAlignment="Right" VerticalAlignment="Center" />
         <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" Text="Bienvenido a IPOkemon" FontSize="40" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
         <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0" Text="Ultimos avistamientos" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,20">
+            
+        </ScrollViewer>
+
         <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0" Text="Entrena a estos pokemon!" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+        <ScrollViewer Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,20">
+            
+        </ScrollViewer>
     </Grid>
 </Page>

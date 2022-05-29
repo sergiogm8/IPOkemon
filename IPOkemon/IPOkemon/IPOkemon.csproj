@@ -160,8 +160,8 @@
     <Content Include="Assets\fondos\paisaje.jpg" />
     <Content Include="Assets\fondos\fondo_pokeparada.jpg" />
     <Content Include="Assets\gengar.png" />
-    <Content Include="Assets\ic_pokeball_claro.png" />
     <Content Include="Assets\ic_pokeball_oscuro.png" />
+    <Content Include="Assets\ic_pokeball_claro.png" />
     <Content Include="Assets\ic_pokedex_claro.png" />
     <Content Include="Assets\ic_pokedex_oscuro.png" />
     <Content Include="Assets\jigglypuff.png" />

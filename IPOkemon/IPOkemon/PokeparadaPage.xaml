@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="IPOkemon.PokeparadaPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IPOkemon"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="1245*"/>
+            <ColumnDefinition Width="140*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="801*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Assets/fondos/fondo_pokeparada.jpg" Grid.RowSpan="3" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
+    </Grid>
+</Page>

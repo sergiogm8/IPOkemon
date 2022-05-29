@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +14,9 @@ namespace IPOkemon
         public string tipo { get; set; }
         public bool capturado { get; set; }
         public string descripcion { get; set; }
-        public Uri sprite { get; set; }
+        public string sprite { get; set; }
 
-        public Pokemon(string nombre, int nivel, double exp, string tipo, bool capturado, string descripcion, Uri sprite)
+        public Pokemon(string nombre, int nivel, double exp, string tipo, bool capturado, string descripcion, string sprite)
         {
             this.nombre = nombre;
             this.nivel = nivel;

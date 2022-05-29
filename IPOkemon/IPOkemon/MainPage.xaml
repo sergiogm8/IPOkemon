@@ -1,14 +1,55 @@
 ﻿<Page
-    x:Class="IPOkemon.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IPOkemon"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.UI.Xaml.Controls"
+    x:Class="IPOkemon.MainPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Border Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button x:Name="btMenu" Margin="5" Click="flipMenu">
+                <FontIcon Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets"/>
+            </Button>
+        </Border>
+
+        <SplitView x:Name="sView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" CompactPaneLength="30" OpenPaneLength="250" DisplayMode="CompactInline" IsPaneOpen="True">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <SymbolIcon Grid.Row="0" Grid.Column="0" Margin="5" Symbol="Home"/>
+                    <Image Grid.Row="1" Grid.Column="0" Margin="5" Source="Assets\ic_pokeball_oscuro.png"/>
+                    <Image Grid.Row="2" Grid.Column="0" Margin="5" Source="Assets\ic_pokedex_oscuro.png"/>
+                    <SymbolIcon Grid.Row="3" Grid.Column="0" Margin="5" Symbol="Setting"/>
+                    <Button x:Name="btnInicio" Grid.Row="0" Grid.Column="1" Content="Inicio" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnInicio_Click"/>
+                    <Button x:Name="btnCapturar"  Grid.Row="1" Grid.Column="1" Content="Capturar Pokemons" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnCapturar_Click" />
+                    <Button x:Name="btnPokedex" Grid.Row="2" Grid.Column="1" Content="PokeDex" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+                    <Button x:Name="btnConfig" Grid.Row="3" Grid.Column="1" Content="Configuración" Height="50"  HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Margin="0,0,0,0"/>
+                </Grid>
+            </SplitView.Pane>
+            <Frame x:Name="frame" Grid.Row="1" Grid.Column="1">
+            </Frame>
+        </SplitView>
     </Grid>
 </Page>

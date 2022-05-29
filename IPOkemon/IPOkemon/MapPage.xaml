@@ -1,14 +1,27 @@
 ﻿<Page
-    x:Class="IPOkemon.MapPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IPOkemon"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:Controls="using:Windows.UI.Xaml.Controls"
+    x:Class="IPOkemon.MapPage"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyDown="Page_KeyDown" >
 
     <Grid>
+
+        <Maps:MapControl Name="MyMap"  
+           Style="Road"                          
+           ZoomInteractionMode="Disabled"
+                         TransitFeaturesVisible="False"
+                         LandmarksVisible="False"
+                         BusinessLandmarksVisible="False"
+           MapServiceToken="cPaNxekJD0Iyjh7kOLPM~MRQgNT3cxA6yplt-dbijWg~Av0OOR4_QSw39285dyyva17SA22PKJ1R6QGFQzwO_wr20XyF7lPDSN66l0NfKVx1" MapElementClick="MyMap_MapElementClick" TiltInteractionMode="ControlOnly" RotateInteractionMode="Disabled"/>
+
+        <Image Source="Assets/rango.png" Stretch="None" IsHitTestVisible="False" Opacity="0.5"/>
+        <Image Source="Assets/personaje.png" Stretch="None" IsHitTestVisible="False"/>  
 
     </Grid>
 </Page>

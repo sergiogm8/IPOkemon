@@ -40,10 +40,10 @@ namespace IPOkemon
             pokemons.Add(articuno);
         }
 
-        private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {

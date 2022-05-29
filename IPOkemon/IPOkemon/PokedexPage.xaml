@@ -10,26 +10,29 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="103*"/>
-            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="253*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="153*"/>
-            <RowDefinition Height="847*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="893*"/>
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="29,0,0,0" Text="Filtrar por:" TextWrapping="Wrap" VerticalAlignment="Center" Height="37" Width="200" FontSize="22"/>
-            <ComboBox x:Name="comboTypes" Width="342" VerticalAlignment="Center" Height="58" Margin="236,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="Filtrar por tipo:" TextWrapping="Wrap" VerticalAlignment="Center"  Height="37" FontSize="20" Margin="111,0,0,0" Grid.Row="1" />
+        <ComboBox x:Name="comboTypes" Height="40" Width="190" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" />
         <AutoSuggestBox x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="30"
-                SuggestionChosen="AutoSuggestBox_SuggestionChosen"
-                Width="774" AutomationProperties.Name="Basic AutoSuggestBox" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="59" QueryIcon="Find" PlaceholderText="Busca tu pokemon..." FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                SuggestionChosen="AutoSuggestBox_SuggestionChosen" AutomationProperties.Name="Basic AutoSuggestBox"
+                        Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" QueryIcon="Find"
+                        PlaceholderText="Busca tu pokemon..." FontSize="22" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="300" Height="43" Grid.Row="1"/>
 
-        <GridView ItemsSource="{x:Bind pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="2" Grid.Row="1">
+        <GridView ItemsSource="{x:Bind pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="3" Grid.Row="2">
             <GridView.ItemTemplate>
                 <DataTemplate x:Name="templatePokedex" x:DataType="local:Pokemon">
                     <Grid Name="gridelemento" Height="175" Width="200">
-                        <Image x:Name="imagePokemon" Source="{x:Bind Path=sprite}" Stretch="UniformToFill" HorizontalAlignment="Left"/>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                            <TextBlock Text="{x:Bind nombre}" FontSize=""/>
+                            <Image x:Name="imagePokemon" Source="{x:Bind Path=sprite}" Stretch="UniformToFill" HorizontalAlignment="Left"/>
+                            <TextBlock Text="{x:Bind nombre}" />
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

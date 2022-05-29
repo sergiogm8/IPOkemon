@@ -165,6 +165,7 @@
     <Content Include="Assets\ic_pokedex_claro.png" />
     <Content Include="Assets\ic_pokedex_oscuro.png" />
     <Content Include="Assets\jigglypuff.png" />
+    <Content Include="Assets\mano.png" />
     <Content Include="Assets\personaje.png" />
     <Content Include="Assets\pikachu.png" />
     <Content Include="Assets\pokeball.png" />
@@ -172,6 +173,7 @@
     <Content Include="Assets\pokestop_disabled.png" />
     <Content Include="Assets\rango.png" />
     <Content Include="Assets\snorlax.png" />
+    <Content Include="Assets\usar_pokeparada.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -51,5 +51,9 @@
             <Frame x:Name="frame" Grid.Row="1" Grid.Column="1">
             </Frame>
         </SplitView>
+        <Image x:Name="imgNumPokeballs" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="auto" 
+               Source="Assets/pokeball.png" Margin="0,0,100,0" Visibility="Collapsed"/>
+        <TextBlock x:Name="txtNumPokeballs" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Height="auto" Width="auto" 
+                   Margin="0,0,65,0" FontSize="20" VerticalAlignment="Center" Visibility="Collapsed"/>
     </Grid>
 </Page>

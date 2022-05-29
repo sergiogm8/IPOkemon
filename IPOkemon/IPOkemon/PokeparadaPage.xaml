@@ -7,18 +7,147 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+
+        <Storyboard x:Name="sb1Pokeball">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imParada" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="sb2Pokeball">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imParada" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="-200"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="burbuja2" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="sb3Pokeball">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imParada" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="-400"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="burbuja2" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="burbuja3" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="350"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="burbuja3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="400"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="sbIconoClick" AutoReverse="True" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imMano" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="20"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imMano" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="40"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="1245*"/>
-            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="412*"/>
+            <ColumnDefinition Width="421*"/>
+            <ColumnDefinition Width="408*"/>
+            <ColumnDefinition Width="139*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="801*"/>
-            <RowDefinition Height="60*"/>
+            <RowDefinition Height="104*"/>
+            <RowDefinition Height="489*"/>
+            <RowDefinition Height="345*"/>
+            <RowDefinition Height="62*"/>
         </Grid.RowDefinitions>
-        <Image Source="Assets/fondos/fondo_pokeparada.jpg" Grid.RowSpan="3" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
+        <Image Source="Assets/fondos/fondo_pokeparada.jpg" Grid.RowSpan="4" Grid.ColumnSpan="5" Stretch="UniformToFill" />
+        <Grid Grid.Column="1" Grid.Row="1" Width="auto" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Image x:Name="imParada" Source="Assets/usar_pokeparada.png" PointerReleased="imParada_PointerReleased" Width="400" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Image.Projection>
+                    <PlaneProjection/>
+                </Image.Projection>
+            </Image>
+            <Image x:Name="imMano" Source="Assets/mano.png" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False" Height="120" Width="120" Margin="662,243,458,471" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Image.RenderTransform>
+                    <CompositeTransform Rotation="-45"/>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+        <Canvas x:Name="burbuja1" Grid.Column="2" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Width="Auto" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja1_PointerReleased">
+            <Canvas.RenderTransform>
+                <CompositeTransform/>
+            </Canvas.RenderTransform>
+            <Image Source="Assets/pokeball.png" Width="120" Height="120" Canvas.Left="-64" Canvas.Top="-206"/>
+            <Ellipse Height="185" Stroke="Black" Width="185" Fill="#3327FFF6" Canvas.Left="-96" Canvas.Top="-238"/>
+        </Canvas>
+        <Canvas x:Name="burbuja2" Grid.Column="2" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Width="Auto" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja2_PointerReleased">
+            <Canvas.RenderTransform>
+                <CompositeTransform/>
+            </Canvas.RenderTransform>
+            <Image Source="Assets/pokeball.png" Width="120" Height="120" Canvas.Left="-67" Canvas.Top="-210" />
+            <Ellipse Height="185" Stroke="Black" Width="185" Fill="#3327FFF6" Canvas.Left="-100" Canvas.Top="-242" />
+        </Canvas>
+        <Canvas x:Name="burbuja3" Grid.Column="2" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Width="Auto" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja3_PointerReleased">
+            <Canvas.RenderTransform>
+                <CompositeTransform/>
+            </Canvas.RenderTransform>
+            <Image Source="Assets/pokeball.png" Width="120" Height="120" Canvas.Left="-58" Canvas.Top="-208" />
+            <Ellipse Height="185" Stroke="Black" Width="185" Fill="#3327FFF6" Canvas.Top="-240" Canvas.Left="-90"/>
+        </Canvas>
+        <Button Grid.Column="4" VerticalAlignment="Bottom" Background="White" Height="43" Click="Button_Click" Width="44">
+            <SymbolIcon Symbol="Cancel" Foreground="Black"/>
+        </Button>
     </Grid>
 </Page>

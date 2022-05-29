@@ -1406,15 +1406,15 @@
                 <Image x:Name="image5" Source="imgs/furia.png" Width="30" Height="30" Canvas.Left="15.338" Visibility="Collapsed"  />
             </Canvas>
         </Canvas>
-        <Canvas x:Name="canvas" Grid.ColumnSpan="2" Grid.Column="3" Height="Auto" Margin="53,118,371,69" Grid.RowSpan="2" Grid.Row="4" Width="Auto">
+        <Canvas x:Name="canvas" Height="Auto" Grid.Row="4" Grid.Column="3" Width="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <Image x:Name="imgPokeball" Source="Assets/pokeball.png" Width="100" Height="100"
-                ManipulationMode="TranslateX, TranslateY" Canvas.Left="117" Canvas.Top="517" PointerReleased="imgPokeball_PointerReleased">
+                ManipulationMode="TranslateX, TranslateY" Canvas.Left="-33" Canvas.Top="-53" PointerReleased="imgPokeball_PointerReleased">
                 <Image.RenderTransform>
                     <CompositeTransform x:Name="mytransform" />
                 </Image.RenderTransform>
 
             </Image>
-            <Path x:Name="path6" Height="410" Stroke="Black" UseLayoutRounding="False" d:LayoutRounding="Auto" Data="M164.5,0.5 C174.4066,0.5 184.10806,1.5952955 193.53072,3.6940691 L196.72034,4.4560909 L197.96092,3.1654379 L200.28111,5.3956232 L201.53729,5.7366233 C247.824,19.060097 286.61499,56.814674 308.70608,107.52316 L310.198,111.04905 L407.75766,204.82458 L303.77432,313.004 L302.66324,315.22342 C273.51071,371.92465 222.52441,409.5 164.5,409.5 C73.9253,409.5 0.49999928,317.94223 0.5,205 C0.49999928,92.05777 73.9253,0.5 164.5,0.5 z" RenderTransformOrigin="0.402931814208599,0.5" Stretch="Fill" Width="408" Fill="#FFFF4040" Opacity="0">
+            <Path x:Name="path6" Height="410" Stroke="Black" UseLayoutRounding="False" d:LayoutRounding="Auto" Data="M164.5,0.5 C174.4066,0.5 184.10806,1.5952955 193.53072,3.6940691 L196.72034,4.4560909 L197.96092,3.1654379 L200.28111,5.3956232 L201.53729,5.7366233 C247.824,19.060097 286.61499,56.814674 308.70608,107.52316 L310.198,111.04905 L407.75766,204.82458 L303.77432,313.004 L302.66324,315.22342 C273.51071,371.92465 222.52441,409.5 164.5,409.5 C73.9253,409.5 0.49999928,317.94223 0.5,205 C0.49999928,92.05777 73.9253,0.5 164.5,0.5 z" RenderTransformOrigin="0.402931814208599,0.5" Stretch="Fill" Width="408" Fill="#FFFF4040" Opacity="0" Canvas.Top="-570" Canvas.Left="-150">
                 <Path.RenderTransform>
                     <CompositeTransform Rotation="-205.592"/>
                 </Path.RenderTransform>

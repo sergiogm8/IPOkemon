@@ -6,36 +6,39 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="762" Width="1128">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="111*"/>
-            <RowDefinition Height="255*"/>
+            <RowDefinition Height="105*"/>
+            <RowDefinition Height="350*"/>
             <RowDefinition Height="328*"/>
-            <RowDefinition Height="68*"/>
+            <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="142*"/>
             <ColumnDefinition Width="233*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{x:Bind Path=pokemon.nombre}" TextWrapping="Wrap" VerticalAlignment="Center" Height="19" Width="0"/>
-        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="64" Width="52" Margin="150,0,0,0">
-            <TextBlock FontSize="24">
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Width="auto" Margin="150,0,0,0" >
+            <TextBlock FontSize="24" Width="auto">
                 <Run Text="Tipo: "/>
                 <Run Text="{x:Bind Path=pokemon.tipo}"/>
             </TextBlock>
-            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal">
-                <TextBlock FontSize="24">
+            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" Width="auto" Height="auto" Margin="0,10,0,0">
+                <TextBlock FontSize="24" Width="auto">
                     <Run Text="Lvl: "/>
                     <Run Text="{x:Bind Path=pokemon.nivel}"/>
                 </TextBlock>
-                <ProgressBar HorizontalAlignment="Stretch" Foreground="#FF1570B0" Value="{x:Bind Path=pokemon.exp}"/>
+                <ProgressBar HorizontalAlignment="Left"  Foreground="#FF1570B0" Value="{x:Bind Path=pokemon.exp}" Height="10" Width="300" Margin="0,10,0,0"/>
             </StackPanel>
         </StackPanel>
-        <Image HorizontalAlignment="Center" Source="{x:Bind Path=pokemon.sprite}" Height="261" VerticalAlignment="Center" Width="301" Grid.RowSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="62,39,0,0" Grid.Row="2" Text="{x:Bind Path=pokemon.descripcion}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="290" Width="1037" FontSize="24" Grid.RowSpan="2"/>
-        <Button Content="Cerrar" Grid.Column="1" Height="36" Margin="545,0,0,0" Grid.Row="3" Width="126" FontSize="20" Click="Button_Click"/>
+        <Image HorizontalAlignment="Center" Source="{x:Bind Path=pokemon.sprite}" Height="261" VerticalAlignment="Center" Width="301" Grid.Row="1"/>
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="30,30,30,30">
+            <TextBlock HorizontalAlignment="Left" Text="{x:Bind Path=pokemon.descripcion}" TextWrapping="WrapWholeWords" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="24" />
+        </Border>
+        <Button Content="Cerrar" Grid.Column="1" Height="36" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="3" Width="auto" FontSize="20" Click="Button_Click" VerticalContentAlignment="Center"/>
+        
 
     </Grid>
 </Page>

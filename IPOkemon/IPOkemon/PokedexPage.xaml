@@ -8,39 +8,42 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="126*"/>
-            <ColumnDefinition Width="118*"/>
-            <ColumnDefinition Width="131*"/>
-            <ColumnDefinition Width="375*"/>
+            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="951*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="39*"/>
             <RowDefinition Height="70*"/>
             <RowDefinition Height="893*"/>
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Left" Text="Filtrar por tipo:" TextWrapping="Wrap" VerticalAlignment="Center"  Height="37" FontSize="20" Margin="111,0,0,0" Grid.Row="1" Width="131" />
-        <ComboBox x:Name="comboTypes" Height="40" Width="190" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" />
-        <AutoSuggestBox x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="30"
-                SuggestionChosen="AutoSuggestBox_SuggestionChosen" AutomationProperties.Name="Basic AutoSuggestBox"
-                        Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" QueryIcon="Find"
-                        PlaceholderText="Busca tu pokemon..." FontSize="22" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="300" Height="43" Grid.Row="1" Grid.ColumnSpan="2"/>
 
-        <GridView ItemsSource="{x:Bind pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="4" Grid.Row="2" ItemClick="Pokemon_Click" x:Name="gvPokemons">
+        <StackPanel x:Name="spFiltrado" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="55,0,0,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center">
+            <StackPanel x:Name="spTipo" Orientation="Horizontal">
+                <TextBlock Text="Filtrar por tipo:" TextWrapping="WrapWholeWords" Width="auto" Height="auto" VerticalAlignment="Center"/>
+                <ComboBox x:Name="comboTypes" Height="32" Width="99" Margin="10,0,0,0"/>
+            </StackPanel>
+            <AutoSuggestBox x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15" Margin="30,0,0,0"
+                SuggestionChosen="AutoSuggestBox_SuggestionChosen" AutomationProperties.Name="Basic AutoSuggestBox"
+                QueryIcon="Find"
+                PlaceholderText="Buscar pokemon" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="32" Width="200"  />
+
+        </StackPanel>
+
+        <GridView ItemsSource="{x:Bind Path=pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="4" Grid.Row="2" ItemClick="Pokemon_Click" x:Name="gvPokemons" Margin="40,20,0,0">
             <GridView.ItemTemplate>
                 <DataTemplate x:Name="templatePokedex" x:DataType="local:Pokemon">
-                    <Grid Name="gridelemento" Height="175" Width="300">
+                    <Grid x:Name="gridelemento" Height="175" Width="300">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <Border>
+                            <Border RequestedTheme="Default" >
                                 <Image x:Name="imagePokemon" Source="{x:Bind Path=sprite}" Stretch="UniformToFill" HorizontalAlignment="Left"/>
                             </Border>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                <TextBlock Text="{x:Bind nombre}"/>
-                                <TextBlock>
-                                    <Run Text="Tipo: "/>
-                                    <Run Text="{x:Bind tipo}"/>
-                                </TextBlock>
+                                <TextBlock Text="{x:Bind Path=nombre}"/>
+                                <TextBlock><Run Text="Tipo: "/><Run Text=" "/><Run Text="{x:Bind Path=tipo}"/></TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -48,11 +51,18 @@
             </GridView.ItemTemplate>
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <ItemsWrapGrid MaximumRowsOrColumns="4" Orientation="Horizontal"/>
+                    <ItemsWrapGrid MaximumRowsOrColumns="4" Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </GridView.ItemsPanel>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="Margin" Value="5, 5, 5, 5"/>
+                    <Setter Property="BorderBrush" Value="#4d4c4b"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                </Style>
+            </GridView.ItemContainerStyle>
         </GridView>
-        <Frame Grid.Column="2" Margin="0,0,0,10" Grid.Row="2" x:Name="pokeinfo" Visibility="Collapsed" Grid.ColumnSpan="2"/>
+        <Frame Grid.Column="3" Margin="0,0,0,10" Grid.Row="2" x:Name="pokeinfo" Visibility="Collapsed"/>
 
     </Grid>
 </Page>

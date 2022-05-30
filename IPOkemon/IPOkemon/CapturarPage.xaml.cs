@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using IPOkemon;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -77,7 +78,10 @@ namespace IPOkemon
                 };
                 var dialogResult = await contentDialog.ShowAsync();
 
-                if (dialogResult == ContentDialogResult.Primary) { padre.navegarAPagina("mapa"); }
+                if (dialogResult == ContentDialogResult.Primary) {
+                    padre.navegarAPagina("mapa"); 
+                }
+
             }
             else
             {

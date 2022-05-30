@@ -1,4 +1,5 @@
 ﻿using IPOkemon;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,8 +52,6 @@ namespace IPOkemon
             pokemons.Add(azumarill);
             pokemons.Add(articuno);
             pokemons.Add(snorlax);
-
-            DataContext = numPokeballs;
 
             navegarAPagina("inicio");
         }

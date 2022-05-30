@@ -259,6 +259,7 @@ namespace IPOkemon
                             PrimaryButtonText = "Aceptar",
                             DefaultButton = ContentDialogButton.Primary
                         };
+                        await dialog.ShowAsync();
                     }
                 }
                 else

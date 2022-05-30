@@ -142,12 +142,39 @@
       <DependentUpon>PokeparadaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucAzumarillCapturar.xaml.cs">
+    <Compile Include="ucAvistado.xaml.cs">
+      <DependentUpon>ucAvistado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucCapturar\ucAipomCapturar.xaml.cs">
+      <DependentUpon>ucAipomCapturar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucCapturar\ucAzumarillCapturar.xaml.cs">
       <DependentUpon>ucAzumarillCapturar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ucArticunoCapturar.xaml.cs" />
-    <Compile Include="ucSnorlaxCapturar.xaml.cs">
+    <Compile Include="ucCapturar\ucArticunoCapturar.xaml.cs" />
+    <Compile Include="ucCapturar\ucSnorlaxCapturar.xaml.cs">
       <DependentUpon>ucSnorlaxCapturar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucEntrenar.xaml.cs">
+      <DependentUpon>ucEntrenar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucCastform.xaml.cs">
+      <DependentUpon>ucCastform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucAipom.xaml.cs">
+      <DependentUpon>ucAipom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucAzumarill.xaml.cs">
+      <DependentUpon>ucAzumarill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucSnorlax.xaml.cs">
+      <DependentUpon>ucSnorlax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucArticuno.xaml.cs">
+      <DependentUpon>ucArticuno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucSwablu.xaml.cs">
+      <DependentUpon>ucSwablu.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -156,11 +183,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\aipom.png" />
     <Content Include="Assets\articuno.png" />
     <Content Include="Assets\azumarill.png" />
+    <Content Include="Assets\castform.png" />
     <Content Include="Assets\charmander.png" />
     <Content Include="Assets\entrenador2.png" />
     <Content Include="Assets\entrenador3.png" />
+    <Content Include="Assets\fondos\fondo_aipom.jpg" />
     <Content Include="Assets\fondos\fondo_articuno.png" />
     <Content Include="Assets\fondos\fondo_snorlax.jpg" />
     <Content Include="Assets\fondos\paisaje.jpg" />
@@ -179,6 +209,49 @@
     <Content Include="Assets\pokestop_disabled.png" />
     <Content Include="Assets\rango.png" />
     <Content Include="Assets\snorlax.png" />
+    <Content Include="Assets\swablu.png" />
+    <Content Include="Assets\uc_aipom\batalla.png" />
+    <Content Include="Assets\uc_aipom\corazon_pokeball.png" />
+    <Content Include="Assets\uc_aipom\equipo-azul.png" />
+    <Content Include="Assets\uc_aipom\estrella.png" />
+    <Content Include="Assets\uc_aipom\flecha-hacia-arriba.png" />
+    <Content Include="Assets\uc_aipom\fondo_aipom.jpg" />
+    <Content Include="Assets\uc_aipom\pocion.png" />
+    <Content Include="Assets\uc_articuno\Copo.png" />
+    <Content Include="Assets\uc_articuno\Corazon.png" />
+    <Content Include="Assets\uc_articuno\Escudo.png" />
+    <Content Include="Assets\uc_articuno\Pocion.png" />
+    <Content Include="Assets\uc_azumarill\espiralOjo.png" />
+    <Content Include="Assets\uc_azumarill\fuerza.png" />
+    <Content Include="Assets\uc_azumarill\furia.png" />
+    <Content Include="Assets\uc_azumarill\health.png" />
+    <Content Include="Assets\uc_azumarill\paisaje.jpg" />
+    <Content Include="Assets\uc_azumarill\pocionmaxima.png" />
+    <Content Include="Assets\uc_azumarill\potion.png" />
+    <Content Include="Assets\uc_azumarill\shield.png" />
+    <Content Include="Assets\uc_azumarill\sucio.png" />
+    <Content Include="Assets\uc_azumarill\tirita.png" />
+    <Content Include="Assets\uc_Castform\102-1021879_iconos-y-figuras-de-amor-icono-de-corazon-removebg-preview.png" />
+    <Content Include="Assets\uc_Castform\escudo.png" />
+    <Content Include="Assets\uc_Castform\new_fondo.PNG" />
+    <Content Include="Assets\uc_Castform\pngwing.com.png" />
+    <Content Include="Assets\uc_snorlax\corazon.png" />
+    <Content Include="Assets\uc_snorlax\escudo.png" />
+    <Content Include="Assets\uc_snorlax\fondo.jpg" />
+    <Content Include="Assets\uc_snorlax\pEscudo.png" />
+    <Content Include="Assets\uc_snorlax\piedra.png" />
+    <Content Include="Assets\uc_snorlax\pocion.png" />
+    <Content Include="Assets\uc_swablu\ataque.png" />
+    <Content Include="Assets\uc_swablu\chispitas.png" />
+    <Content Include="Assets\uc_swablu\comida.png" />
+    <Content Include="Assets\uc_swablu\corazon.png" />
+    <Content Include="Assets\uc_swablu\escudo.png" />
+    <Content Include="Assets\uc_swablu\hambre.png" />
+    <Content Include="Assets\uc_swablu\nombre.png" />
+    <Content Include="Assets\uc_swablu\padrera_fondo.png" />
+    <Content Include="Assets\uc_swablu\pocima.png" />
+    <Content Include="Assets\uc_swablu\pokeball.png" />
+    <Content Include="Assets\uc_swablu\shiny.png" />
     <Content Include="Assets\usar_pokeparada.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -222,17 +295,53 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ucAzumarillCapturar.xaml">
+    <Page Include="ucAvistado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucCapturar\ucAipomCapturar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ucArticunocapturar.xaml">
+    <Page Include="ucCapturar\ucAzumarillCapturar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ucSnorlaxCapturar.xaml">
+    <Page Include="ucCapturar\ucArticunocapturar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucCapturar\ucSnorlaxCapturar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucEntrenar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucMostrar\ucCastform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucAipom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucAzumarill.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucSnorlax.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucMostrar\ucArticuno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucSwablu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -242,10 +351,14 @@
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
       <Version>7.1.2</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>7.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.7.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -11,8 +11,8 @@
     <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="147*"/>
-            <ColumnDefinition Width="155*"/>
-            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="260*"/>
             <ColumnDefinition Width="951*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -30,10 +30,11 @@
         <GridView ItemsSource="{x:Bind Path=pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="4" Grid.Row="2" ItemClick="Pokemon_Click" x:Name="gvPokemons" Margin="40,20,0,0">
             <GridView.ItemTemplate>
                 <DataTemplate x:Name="templatePokedex" x:DataType="local:Pokemon">
-                    <Grid x:Name="gridelemento" Height="175" Width="300">
+                    <Grid x:Name="gridelemento" Height="175" Width="300" >
+                        <Border Background="Black" Opacity="0.2"/>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                             <Border RequestedTheme="Default" >
-                                <Image x:Name="imagePokemon" Source="{x:Bind Path=sprite}" Stretch="UniformToFill" HorizontalAlignment="Left"/>
+                                <Image x:Name="imagePokemon" Source="{x:Bind Path=sprite}" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                             </Border>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Bind Path=nombre}"/>

@@ -22,9 +22,40 @@ namespace IPOkemon
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        MainPage padre;
+        List<Pokemon> pokemons;
+
         public HomePage()
         {
             this.InitializeComponent();
+            this.Loaded += HomePage_Loaded;
+            
+        }
+
+        private void HomePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            pokemons = padre.pokemons;
+
+            foreach (var pokemon in pokemons)
+            {
+                if (!pokemon.capturado)
+                {
+                    ucAvistado uc = new ucAvistado(pokemon);
+                    spAvistamientos.Children.Add(uc);
+                }
+
+                if (pokemon.exp >= 75.0)
+                {
+                    ucEntrenar uc = new ucEntrenar(pokemon);
+                    spEntrenar.Children.Add(uc);
+                }
+            }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            padre = (MainPage)e.Parameter;
         }
     }
 }

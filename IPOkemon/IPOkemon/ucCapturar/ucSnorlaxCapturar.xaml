@@ -198,7 +198,7 @@
             <RowDefinition Height="150*"/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Image Source="Assets/fondos/fondo_snorlax.jpg" Grid.RowSpan="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="UniformToFill" Margin="-179,0,0,0"/>
+        <Image Source="/Assets/fondos/fondo_snorlax.jpg" Grid.RowSpan="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="UniformToFill" Margin="-179,0,0,0"/>
         <Grid x:Name="cuerpo" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3" >
             <Grid.RenderTransform>
                 <TransformGroup>
@@ -378,7 +378,7 @@
         </Grid>
 
         <Canvas x:Name="canvas" Grid.Column="1" Height="Auto" Grid.Row="3" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Image x:Name="imgPokeball" Source="Assets/pokeball.png" Width="100" Height="100"
+            <Image x:Name="imgPokeball" Source="/Assets/pokeball.png" Width="100" Height="100"
                 ManipulationMode="TranslateX, TranslateY" Canvas.Left="-63" Canvas.Top="-86" PointerReleased="imgPokeball_PointerReleased">
                 <Image.RenderTransform>
                     <CompositeTransform x:Name="mytransform" />

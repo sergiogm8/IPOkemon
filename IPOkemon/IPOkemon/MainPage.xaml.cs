@@ -49,9 +49,21 @@ namespace IPOkemon
             Pokemon snorlax = new Pokemon("Snorlax", 38, 79.5, "Normal", false, "Un día cualquiera en la vida de Snorlax consiste en comer " +
                 "y dormir. Es un Pokémon tan dócil que es fácil ver niños usando la gran panza que tiene como lugar de juegos", "ms-appx:///Assets/snorlax.png");
 
+            Pokemon aipom = new Pokemon("Aipom", 29, 20.4, "Normal", false, "La cola de Aipom termina en una especie de mano a la que, con un poco de cabeza, se" +
+                " le puede dar muy buen uso. Pero hay un problema: como se ha acostumbrado a usarla mucho, las de verdad se le han vuelto algo torponas.", "ms-appx:///Assets/aipom.png");
+
+            Pokemon castform = new Pokemon("Castform", 23, 67.8, "Normal", false, "Castform se vale del poder de la naturaleza para tomar el aspecto del sol, la " +
+                "lluvia o nubarrones de nieve. El estado de ánimo de este Pokémon varía según el clima.", "ms-appx:///Assets/castform.png");
+
+            Pokemon swablu = new Pokemon("Swablu", 43, 13.5, "Volador", false, "Swablu tiene unas alas ligeras y esponjosas que parecen nubes de algodón. A este " +
+                "Pokémon no le asusta la gente. De hecho, puede llegar a posarse en la cabeza de alguien y servirle de gorro sedoso.", "ms-appx:///Assets/swablu.png");
+
             pokemons.Add(azumarill);
             pokemons.Add(articuno);
             pokemons.Add(snorlax);
+            pokemons.Add(aipom);
+            pokemons.Add(castform);
+            pokemons.Add(swablu);
 
             navegarAPagina("inicio");
         }
@@ -88,7 +100,7 @@ namespace IPOkemon
             {
                 case "inicio":
                     ocultarNumPokeballs();
-                    this.frame.Navigate(typeof(HomePage));
+                    this.frame.Navigate(typeof(HomePage), this);
                     break;
                 case "mapa":
                     mostrarNumPokeballs();

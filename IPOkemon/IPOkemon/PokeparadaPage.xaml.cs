@@ -22,9 +22,77 @@ namespace IPOkemon
     /// </summary>
     public sealed partial class PokeparadaPage : Page
     {
+        MainPage padre;
+
         public PokeparadaPage()
         {
             this.InitializeComponent();
+            this.Loaded += PokeparadaPage_Loaded;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            padre = (MainPage)e.Parameter;
+        }
+
+        private void PokeparadaPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            sbIconoClick.Begin();
+        }
+
+        private void imParada_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            int numPokeballs = generarNumPokeballs();
+            this.imMano.Visibility = Visibility.Collapsed;
+            this.imParada.IsHitTestVisible = false;
+
+            switch (numPokeballs)
+            {
+                case 1:
+                    sb1Pokeball.Begin();
+                    break;
+
+                case 2:
+                    sb2Pokeball.Begin();
+                    break;
+
+                case 3:
+                    sb3Pokeball.Begin();
+                    break;
+            }
+        }
+
+        private int generarNumPokeballs()
+        {
+            Random rand = new Random();
+            return rand.Next(1, 4);
+        }
+
+        private void burbuja1_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            this.burbuja1.Visibility = Visibility.Collapsed;
+            padre.numPokeballs += 1;
+            padre.actualizarNumPokeballs();
+        }
+
+        private void burbuja2_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            this.burbuja2.Visibility = Visibility.Collapsed;
+            padre.numPokeballs += 1;
+            padre.actualizarNumPokeballs();
+        }
+
+        private void burbuja3_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            this.burbuja3.Visibility = Visibility.Collapsed;
+            padre.numPokeballs += 1;
+            padre.actualizarNumPokeballs();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            padre.navegarAPagina("mapa");
         }
     }
 }

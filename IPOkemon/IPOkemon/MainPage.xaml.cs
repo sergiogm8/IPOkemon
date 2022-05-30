@@ -24,8 +24,8 @@ namespace IPOkemon
     public sealed partial class MainPage : Page
     {
         public List<Pokemon> pokemons = new List<Pokemon>();
+        public int numPokeballs = 5;
 
-        
         public MainPage()
         {
             this.InitializeComponent();
@@ -34,7 +34,6 @@ namespace IPOkemon
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
 
             this.Loaded += MainPage_Loaded;
-
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -52,6 +51,8 @@ namespace IPOkemon
             pokemons.Add(azumarill);
             pokemons.Add(articuno);
             pokemons.Add(snorlax);
+
+            DataContext = numPokeballs;
 
             navegarAPagina("inicio");
         }
@@ -87,16 +88,25 @@ namespace IPOkemon
             switch (pagina)
             {
                 case "inicio":
+                    ocultarNumPokeballs();
                     this.frame.Navigate(typeof(HomePage));
                     break;
                 case "mapa":
+                    mostrarNumPokeballs();
                     this.frame.Navigate(typeof(MapPage), this);
                     break;
+                case "pokeparada":
+                    this.frame.Navigate(typeof(PokeparadaPage), this);
+                    break;
                 case "pokedex":
+                    ocultarNumPokeballs();
+                    this.frame.Navigate(typeof(PokedexPage), this);
                     break;
                 case "configuracion":
+                    ocultarNumPokeballs();
                     break;
                 case "capturar":
+                    ocultarNumPokeballs();
                     this.frame.Navigate(typeof(CapturarPage), args);
                     break;
             }
@@ -105,12 +115,87 @@ namespace IPOkemon
 
         private void btnCapturar_Click(object sender, RoutedEventArgs e)
         {
-            navegarAPagina("mapa");
+            if (this.frame.SourcePageType != typeof(MapPage))
+            {
+                navegarAPagina("mapa");
+                mostrarNumPokeballs();
+            }
         }
 
         private void btnInicio_Click(object sender, RoutedEventArgs e)
         {
-            navegarAPagina("inicio");
+            if (this.frame.SourcePageType != typeof(HomePage))
+            {
+                navegarAPagina("inicio");
+            }
+        }
+        
+        private void btnPokedex_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.frame.SourcePageType != typeof(PokedexPage))
+            {
+                navegarAPagina("pokedex");
+            
+            }
+        } 
+        
+        private void btnConfig_Click(object sender, RoutedEventArgs e)
+        {
+           // if (this.frame.SourcePageType != typeof(ConfiguracionPage))
+            //{
+                navegarAPagina("configuracion");
+            //}
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.frame.SourcePageType != typeof(HomePage))
+            {
+                navegarAPagina("inicio");
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (this.frame.SourcePageType != typeof(MapPage))
+            {
+                navegarAPagina("mapa");
+                mostrarNumPokeballs();
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (this.frame.SourcePageType != typeof(PokedexPage))
+            {
+                navegarAPagina("pokedex");
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            // if (this.frame.SourcePageType != typeof(ConfiguracionPage))
+            //{
+            navegarAPagina("configuracion");
+            //}
+        }
+
+        public void ocultarNumPokeballs()
+        {
+            this.txtNumPokeballs.Text = "X" + numPokeballs.ToString();
+            this.imgNumPokeballs.Visibility = Visibility.Collapsed;
+            this.txtNumPokeballs.Visibility = Visibility.Collapsed;
+        }
+
+        public void mostrarNumPokeballs()
+        {
+            this.imgNumPokeballs.Visibility = Visibility.Visible;
+            this.txtNumPokeballs.Visibility = Visibility.Visible;
+        }
+
+        public void actualizarNumPokeballs()
+        {
+            this.txtNumPokeballs.Text = "X" + numPokeballs.ToString();
         }
     }
 }

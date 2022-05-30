@@ -21,11 +21,11 @@
 
         <Border Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Button x:Name="btMenu" Margin="5" Click="flipMenu">
-                <FontIcon Foreground="White" Glyph="&#xE700;" FontFamily="Segoe MDL2 Assets"/>
+                <SymbolIcon Symbol="GlobalNavigationButton"/>
             </Button>
         </Border>
 
-        <SplitView x:Name="sView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" CompactPaneLength="30" OpenPaneLength="250" DisplayMode="CompactInline" IsPaneOpen="True">
+        <SplitView x:Name="sView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" CompactPaneLength="55" OpenPaneLength="250" DisplayMode="CompactInline" IsPaneOpen="True">
             <SplitView.Pane>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -35,21 +35,33 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="55"></ColumnDefinition>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <SymbolIcon Grid.Row="0" Grid.Column="0" Margin="5" Symbol="Home"/>
-                    <Image Grid.Row="1" Grid.Column="0" Margin="5" Source="Assets\ic_pokeball_oscuro.png"/>
-                    <Image Grid.Row="2" Grid.Column="0" Margin="5" Source="Assets\ic_pokedex_oscuro.png"/>
-                    <SymbolIcon Grid.Row="3" Grid.Column="0" Margin="5" Symbol="Setting"/>
-                    <Button x:Name="btnInicio" Grid.Row="0" Grid.Column="1" Content="Inicio" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnInicio_Click"/>
-                    <Button x:Name="btnCapturar"  Grid.Row="1" Grid.Column="1" Content="Capturar Pokemons" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnCapturar_Click" />
-                    <Button x:Name="btnPokedex" Grid.Row="2" Grid.Column="1" Content="PokeDex" Height="50" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-                    <Button x:Name="btnConfig" Grid.Row="3" Grid.Column="1" Content="Configuración" Height="50"  HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Margin="0,0,0,0"/>
+                    <Button Grid.Row="0" Grid.Column="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Width="45" Height="40" Click="Button_Click">
+                        <SymbolIcon Symbol="Home" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Width="45" Height="40" Click="Button_Click_1">
+                        <Image Source="Assets\ic_pokeball_claro.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Width="45" Height="40" Click="Button_Click_2">
+                        <Image Source="Assets\ic_pokedex_claro.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Button>
+                    <Button Grid.Row="4" Grid.Column="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Width="45" Height="40" Click="Button_Click_3">
+                        <SymbolIcon Symbol="Setting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Button>
+                    <Button x:Name="btnInicio" Grid.Row="0" Grid.Column="1" Content="Inicio" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnInicio_Click" />
+                    <Button x:Name="btnCapturar"  Grid.Row="1" Grid.Column="1" Content="Capturar Pokemons" Height="50"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnCapturar_Click" />
+                    <Button x:Name="btnPokedex" Grid.Row="2" Grid.Column="1" Content="PokeDex" Height="50"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnPokedex_Click"/>
+                    <Button x:Name="btnConfig" Grid.Row="4" Grid.Column="1" Content="Configuración" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnConfig_Click"/>
                 </Grid>
             </SplitView.Pane>
             <Frame x:Name="frame" Grid.Row="1" Grid.Column="1">
             </Frame>
         </SplitView>
+        <Image x:Name="imgNumPokeballs" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="auto" 
+               Source="Assets/pokeball.png" Margin="0,0,100,0" Visibility="Collapsed"/>
+        <TextBlock x:Name="txtNumPokeballs" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Height="auto" Width="auto" 
+                   Margin="0,0,65,0" FontSize="20" VerticalAlignment="Center" Visibility="Collapsed"/>
     </Grid>
 </Page>

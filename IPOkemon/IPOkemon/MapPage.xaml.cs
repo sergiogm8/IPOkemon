@@ -237,21 +237,34 @@ namespace IPOkemon
             {
                 if (esPokemon)
                 {
-                    int posPokemon = 0;
-                    for (int i=0; i< pokemons.Count(); i++)
+                    if (padre.numPokeballs > 0)
                     {
-                        if (tag == pokemons[i].nombre.ToLower()) { posPokemon = i; break; }
+                        int posPokemon = 0;
+                        for (int i = 0; i < pokemons.Count(); i++)
+                        {
+                            if (tag == pokemons[i].nombre.ToLower()) { posPokemon = i; break; }
+                        }
+                        List<object> argsToPass = new List<object>();
+                        argsToPass.Add(pokemons[posPokemon]); //0
+                        argsToPass.Add(padre); //1
+                        padre.navegarAPagina("capturar", argsToPass);
                     }
-                    List<object> argsToPass = new List<object>();
-                    argsToPass.Add(pokemons[posPokemon]); //0
-                    argsToPass.Add(padre); //1
-                    padre.navegarAPagina("capturar", argsToPass);
+                    else
+                    {
+                        ContentDialog dialog = new ContentDialog
+                        {
+                            Title = "¡No tienes Pokeballs!",
+                            Content = "Ve a alguna pokeparada para coger Pokeballs",
+                            RequestedTheme = (ElementTheme)0,
+                            PrimaryButtonText = "Aceptar",
+                            DefaultButton = ContentDialogButton.Primary
+                        };
+                    }
                 }
                 else
                 {
-
+                    padre.navegarAPagina("pokeparada");
                 }
-
             }
             else
             {
@@ -261,7 +274,8 @@ namespace IPOkemon
                     {
                         Title = "Pokemon no alcanzable",
                         Content = "¡El pokemon está demasiado lejos! Acércate más",
-                        CloseButtonText = "Ok",
+                        PrimaryButtonText = "Aceptar",
+                        DefaultButton = ContentDialogButton.Primary,
                         RequestedTheme = (ElementTheme)0,
                     };
                     await dialog.ShowAsync();
@@ -272,7 +286,8 @@ namespace IPOkemon
                     {
                         Title = "Pokeparada no alcanzable",
                         Content = "¡Debes estar más cerca!",
-                        CloseButtonText = "Ok",
+                        PrimaryButtonText = "Aceptar",
+                        DefaultButton = ContentDialogButton.Primary,
                         RequestedTheme = (ElementTheme)0,
                     };
                     await dialog.ShowAsync();

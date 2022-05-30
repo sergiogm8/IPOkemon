@@ -72,6 +72,7 @@ namespace IPOkemon
                     Title = "¡Pokemon capturado: !",
                     Content = "Se ha añadido a " + targetPokemon.nombre + " a la PokeDex",
                     PrimaryButtonText = "Continuar",
+                    RequestedTheme = (ElementTheme)0,
                     DefaultButton = ContentDialogButton.Primary,
                 };
                 var dialogResult = await contentDialog.ShowAsync();

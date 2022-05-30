@@ -191,14 +191,15 @@
             <ColumnDefinition Width="38*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="28*"/>
-            <RowDefinition Height="381*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="787*"/>
+            <RowDefinition Height="150*"/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Image Source="Assets/fondos/fondo_snorlax.jpg" Grid.RowSpan="5" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill" Margin="-179.107,-0.007,-174.44,-0.007"/>
-        <Grid x:Name="cuerpo" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3">
+        <Image Source="Assets/fondos/fondo_snorlax.jpg" Grid.RowSpan="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="UniformToFill" Margin="-179,0,0,0"/>
+        <Grid x:Name="cuerpo" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3" >
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -376,15 +377,15 @@
             </Grid>
         </Grid>
 
-        <Canvas x:Name="canvas" Grid.Column="1" Height="Auto"  Grid.Row="2" Width="Auto">
+        <Canvas x:Name="canvas" Grid.Column="1" Height="Auto" Grid.Row="3" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Image x:Name="imgPokeball" Source="Assets/pokeball.png" Width="100" Height="100"
-                ManipulationMode="TranslateX, TranslateY" Canvas.Left="597" Canvas.Top="694" PointerReleased="imgPokeball_PointerReleased">
+                ManipulationMode="TranslateX, TranslateY" Canvas.Left="-63" Canvas.Top="-86" PointerReleased="imgPokeball_PointerReleased">
                 <Image.RenderTransform>
                     <CompositeTransform x:Name="mytransform" />
                 </Image.RenderTransform>
 
             </Image>
-            <Path x:Name="path6" Height="410" Stroke="Black" UseLayoutRounding="False" d:LayoutRounding="Auto" Data="M164.5,0.5 C174.4066,0.5 184.10806,1.5952955 193.53072,3.6940691 L196.72034,4.4560909 L197.96092,3.1654379 L200.28111,5.3956232 L201.53729,5.7366233 C247.824,19.060097 286.61499,56.814674 308.70608,107.52316 L310.198,111.04905 L407.75766,204.82458 L303.77432,313.004 L302.66324,315.22342 C273.51071,371.92465 222.52441,409.5 164.5,409.5 C73.9253,409.5 0.49999928,317.94223 0.5,205 C0.49999928,92.05777 73.9253,0.5 164.5,0.5 z" RenderTransformOrigin="0.402931814208599,0.5" Stretch="Fill" Width="408" Fill="#FFFF4040" Opacity="0" Canvas.Left="479.906" Canvas.Top="177.718">
+            <Path x:Name="path6" Height="410" Stroke="Black" UseLayoutRounding="False" d:LayoutRounding="Auto" Data="M164.5,0.5 C174.4066,0.5 184.10806,1.5952955 193.53072,3.6940691 L196.72034,4.4560909 L197.96092,3.1654379 L200.28111,5.3956232 L201.53729,5.7366233 C247.824,19.060097 286.61499,56.814674 308.70608,107.52316 L310.198,111.04905 L407.75766,204.82458 L303.77432,313.004 L302.66324,315.22342 C273.51071,371.92465 222.52441,409.5 164.5,409.5 C73.9253,409.5 0.49999928,317.94223 0.5,205 C0.49999928,92.05777 73.9253,0.5 164.5,0.5 z" RenderTransformOrigin="0.402931814208599,0.5" Stretch="Fill" Width="408" Fill="#FFFF4040" Opacity="0" Canvas.Left="-180.094" Canvas.Top="-602.282">
                 <Path.RenderTransform>
                     <CompositeTransform Rotation="-205.592"/>
                 </Path.RenderTransform>

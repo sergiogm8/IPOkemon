@@ -100,6 +100,7 @@ namespace IPOkemon
                     break;
                 case "pokedex":
                     ocultarNumPokeballs();
+                    this.frame.Navigate(typeof(PokedexPage), this);
                     break;
                 case "configuracion":
                     ocultarNumPokeballs();
@@ -131,10 +132,11 @@ namespace IPOkemon
         
         private void btnPokedex_Click(object sender, RoutedEventArgs e)
         {
-            //if (this.frame.SourcePageType != typeof(PokedexPage))
-            //{
+            if (this.frame.SourcePageType != typeof(PokedexPage))
+            {
                 navegarAPagina("pokedex");
-            //}
+            
+            }
         } 
         
         private void btnConfig_Click(object sender, RoutedEventArgs e)
@@ -164,10 +166,10 @@ namespace IPOkemon
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //if (this.frame.SourcePageType != typeof(PokedexPage))
-            //{
-            navegarAPagina("pokedex");
-            //}
+            if (this.frame.SourcePageType != typeof(PokedexPage))
+            {
+                navegarAPagina("pokedex");
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

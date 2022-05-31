@@ -20,9 +20,9 @@
             <RowDefinition Height="70*"/>
             <RowDefinition Height="893*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Filtrar por tipo:" TextWrapping="WrapWholeWords" Width="auto" Height="auto" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center"  />
+        <TextBlock x:Uid="txtFiltrar" Text="Filtrar por tipo:" TextWrapping="WrapWholeWords" Width="auto" Height="auto" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center"  />
         <ComboBox x:Name="comboTypes" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="100"/>
-        <AutoSuggestBox x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15"
+        <AutoSuggestBox x:Uid="txtBuscador" x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15"
                 SuggestionChosen="AutoSuggestBox_SuggestionChosen" AutomationProperties.Name="Basic AutoSuggestBox"
                 QueryIcon="Find"
                 PlaceholderText="Buscar pokemon" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />

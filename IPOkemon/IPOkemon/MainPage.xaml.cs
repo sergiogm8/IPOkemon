@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Notifications;
@@ -34,6 +35,9 @@ namespace IPOkemon
 
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(900, 700));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
+            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "en-US";
+            ResourceContext.GetForViewIndependentUse().Reset();
+            ResourceContext.GetForCurrentView();
 
             TileContent content = new TileContent()
             {

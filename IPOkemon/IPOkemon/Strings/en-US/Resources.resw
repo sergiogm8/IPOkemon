@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCapturar.Text" xml:space="preserve">
+    <value>Catch Pokemons</value>
+  </data>
+  <data name="btnCerrarDetPokemon.Content" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnConfig.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="btnInicio.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="txtAvistados.Text" xml:space="preserve">
+    <value>Last sightings</value>
+  </data>
+  <data name="txtBienvenido.Text" xml:space="preserve">
+    <value>Welcome to IPOkemon</value>
+  </data>
+  <data name="txtBuscador.PlaceholderText" xml:space="preserve">
+    <value>Search Pokemon</value>
+  </data>
+  <data name="txtEntrenar.Text" xml:space="preserve">
+    <value>Train these Pokemons</value>
+  </data>
+  <data name="txtFiltrar.Text" xml:space="preserve">
+    <value>Filter by type:</value>
+  </data>
+</root>

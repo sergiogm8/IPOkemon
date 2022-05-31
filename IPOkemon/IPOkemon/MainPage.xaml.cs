@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,28 +35,110 @@ namespace IPOkemon
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(900, 700));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
 
+            TileContent content = new TileContent()
+            {
+                Visual = new TileVisual()
+                {
+                    TileMedium = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                 new AdaptiveText()
+                                 {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                 },
+                                 new AdaptiveText()
+                                 {
+                                    Text = "Un proyecto de IPO2",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                 },
+                            }
+                        }
+                    },
+                    TileWide = new TileBinding()
+                    {
+                        Branding = TileBranding.NameAndLogo,
+                        DisplayName = "Version 1.0",
+
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un poryecto de IPO 2",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Aplicacion sobre Pokemon hecha con tecnologia UWP",
+                                    HintWrap = true,
+                                }
+                            }
+                        }
+                    },
+
+                    TileLarge = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un Proyecto de IPO2",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                }
+                            }
+                        }
+                    },
+                }
+            };
+            var notification = new TileNotification(content.GetXml());
+            notification.ExpirationTime = DateTimeOffset.UtcNow.AddSeconds(30);
+            var updater = TileUpdateManager.CreateTileUpdaterForApplication();
+            updater.Update(notification);
+
             this.Loaded += MainPage_Loaded;
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Pokemon azumarill = new Pokemon("Azumarill", 40, 90.0, "Agua", false, "Azumarill tiene unas orejas enormes, indispensables" +
+            Pokemon azumarill = new Pokemon("Azumarill", 40, 90, "Agua", true, "Azumarill tiene unas orejas enormes, indispensables" +
             " para hacer de sensores. Al aguzar el oído, este Pokémon puede identificar qué tipo de presa tiene cerca. Puede " +
             "detectarlo hasta en ríos de fuertes y rápidas corrientes.", "ms-appx:///Assets/azumarill.png");
 
-            Pokemon articuno = new Pokemon("Articuno", 56, 42.0, "Hielo", false, "Articuno es un Pokémon pájaro legendario que puede " +
+            Pokemon articuno = new Pokemon("Articuno", 56, 83, "Hielo", true, "Articuno es un Pokémon pájaro legendario que puede " +
                 "controlar el hielo. El batir de sus alas congela el aire. Dicen que consigue hacer que nieve cuando vuela.", "ms-appx:///Assets/articuno.png");
 
-            Pokemon snorlax = new Pokemon("Snorlax", 38, 79.5, "Normal", false, "Un día cualquiera en la vida de Snorlax consiste en comer " +
+            Pokemon snorlax = new Pokemon("Snorlax", 38, 80, "Normal", true, "Un día cualquiera en la vida de Snorlax consiste en comer " +
                 "y dormir. Es un Pokémon tan dócil que es fácil ver niños usando la gran panza que tiene como lugar de juegos", "ms-appx:///Assets/snorlax.png");
 
-            Pokemon aipom = new Pokemon("Aipom", 29, 20.4, "Normal", false, "La cola de Aipom termina en una especie de mano a la que, con un poco de cabeza, se" +
+            Pokemon aipom = new Pokemon("Aipom", 29, 76, "Normal", false, "La cola de Aipom termina en una especie de mano a la que, con un poco de cabeza, se" +
                 " le puede dar muy buen uso. Pero hay un problema: como se ha acostumbrado a usarla mucho, las de verdad se le han vuelto algo torponas.", "ms-appx:///Assets/aipom.png");
 
-            Pokemon castform = new Pokemon("Castform", 23, 67.8, "Normal", false, "Castform se vale del poder de la naturaleza para tomar el aspecto del sol, la " +
+            Pokemon castform = new Pokemon("Castform", 23, 78, "Normal", false, "Castform se vale del poder de la naturaleza para tomar el aspecto del sol, la " +
                 "lluvia o nubarrones de nieve. El estado de ánimo de este Pokémon varía según el clima.", "ms-appx:///Assets/castform.png");
 
-            Pokemon swablu = new Pokemon("Swablu", 43, 13.5, "Volador", false, "Swablu tiene unas alas ligeras y esponjosas que parecen nubes de algodón. A este " +
+            Pokemon swablu = new Pokemon("Swablu", 43, 95, "Volador", true, "Swablu tiene unas alas ligeras y esponjosas que parecen nubes de algodón. A este " +
                 "Pokémon no le asusta la gente. De hecho, puede llegar a posarse en la cabeza de alguien y servirle de gorro sedoso.", "ms-appx:///Assets/swablu.png");
 
             pokemons.Add(azumarill);
@@ -208,5 +291,7 @@ namespace IPOkemon
         {
             this.txtNumPokeballs.Text = "X" + numPokeballs.ToString();
         }
+
+        
     }
 }

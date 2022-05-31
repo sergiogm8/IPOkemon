@@ -57,7 +57,7 @@
                             <TextBlock Text="PokeDex" Margin="30,0,0,0" Width="auto" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    <Button x:Name="btnConfig" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnConfig_Click">
+                    <Button x:Name="btnConfig" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnConfig_Click">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Symbol="Setting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                             <TextBlock Text="Configuración" Margin="30,0,0,0" Width="auto" VerticalAlignment="Center"/>

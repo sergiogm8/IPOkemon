@@ -10,11 +10,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="67*"/>
-            <RowDefinition Height="268*"/>
-            <RowDefinition Height="267*"/>
-            <RowDefinition Height="310*"/>
-            <RowDefinition Height="85*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="347*"/>
+            <RowDefinition Height="240*"/>
+            <RowDefinition Height="275*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="146*"/>
@@ -22,15 +22,15 @@
             <ColumnDefinition Width="732*"/>
             <ColumnDefinition Width="93*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Row="1" Grid.Column="1" Source="Assets\personaje.png" Height="150" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="379,0,0,0" />
+        <Image Grid.Row="1" Grid.Column="1" Source="Assets\personaje.png" Height="150" Width="150" HorizontalAlignment="Right" VerticalAlignment="Center" />
         <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" Text="Bienvenido a IPOkemon" FontSize="40" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto"/>
         <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0" Text="Ultimos avistamientos" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto"/>
         <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,20" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" >
             <StackPanel x:Name="spAvistamientos" Orientation="Horizontal" Spacing="20" Height="auto" Width="auto"/>
         </ScrollViewer>
 
-        <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0" Text="Entrena a estos pokemon!" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto"/>
-        <ScrollViewer Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,10" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+        <TextBlock x:Name="txtEntrenar" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0" Text="Entrena a estos pokemon!" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto" Visibility="Collapsed"/>
+        <ScrollViewer x:Name="svEntrenar" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,10" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" Width="auto" Height="auto" Visibility="Collapsed">
             <StackPanel x:Name="spEntrenar" Orientation="Horizontal" Spacing="20" Height="auto" Width="auto"/>
         </ScrollViewer>
     </Grid>

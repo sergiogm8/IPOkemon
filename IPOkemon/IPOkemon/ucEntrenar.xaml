@@ -7,12 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Height="auto"
-    Width="150">
+    Width="auto">
 
-    <Grid Width="auto" Height="auto">
+    <Grid Width="auto">
         <Border Background="Black" BorderBrush="#4d4c4b" BorderThickness="1" Opacity="0.2" Width="auto" Height="auto"/>
         <StackPanel Orientation="Vertical" Spacing="5" HorizontalAlignment="Stretch" Width="auto" Height="auto">
-            <Image x:Name="imgPokemon" Height="auto" Width="auto" Stretch="Fill" Source="{Binding sprite}"/>
+            <Image x:Name="imgPokemon" Height="auto" Width="auto" MaxHeight="112" Source="{Binding sprite}"/>
             <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Width="auto" Height="auto">
                 <TextBlock x:Name="txtNombre" Text="{Binding nombre}" Width="auto"/>
                 <TextBlock x:Name="txtNivel" Width="auto"/>

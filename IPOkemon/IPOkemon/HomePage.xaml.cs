@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,13 +25,14 @@ namespace IPOkemon
     {
         MainPage padre;
         List<Pokemon> pokemons;
+        
 
         public HomePage()
         {
             this.InitializeComponent();
             this.Loaded += HomePage_Loaded;
-            
         }
+
 
         private void HomePage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -43,11 +45,15 @@ namespace IPOkemon
                     ucAvistado uc = new ucAvistado(pokemon);
                     spAvistamientos.Children.Add(uc);
                 }
-
-                if (pokemon.exp >= 75.0)
+                else
                 {
-                    ucEntrenar uc = new ucEntrenar(pokemon);
-                    spEntrenar.Children.Add(uc);
+                    if (pokemon.exp >= 75.0)
+                    {
+                        txtEntrenar.Visibility = Visibility.Visible;
+                        svEntrenar.Visibility = Visibility.Visible;
+                        ucEntrenar uc = new ucEntrenar(pokemon);
+                        spEntrenar.Children.Add(uc);
+                    }
                 }
             }
         }

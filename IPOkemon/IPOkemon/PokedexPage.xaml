@@ -20,14 +20,21 @@
             <RowDefinition Height="70*"/>
             <RowDefinition Height="893*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Uid="txtFiltrar" Text="Filtrar por tipo:" TextWrapping="WrapWholeWords" Width="auto" Height="auto" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center"  />
-        <ComboBox x:Name="comboTypes" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="100"/>
-        <AutoSuggestBox x:Uid="txtBuscador" x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15"
+        <TextBlock Text="Filtrar por tipo:" TextWrapping="WrapWholeWords" Width="auto" Height="auto" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center"  />
+        <ComboBox x:Name="comboTypes" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="100" SelectionChanged="comboTypes_SelectionChanged" >
+            <x:String>Fuego</x:String>
+            <x:String>Agua</x:String>
+            <x:String>Planta</x:String>
+            <x:String>Hielo</x:String>
+            <x:String>Normal</x:String>
+            <x:String>Volador</x:String>
+        </ComboBox>
+        <AutoSuggestBox x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15" QuerySubmitted="AutoSuggestBox_QuerySubmitted" 
                 SuggestionChosen="AutoSuggestBox_SuggestionChosen" AutomationProperties.Name="Basic AutoSuggestBox"
                 QueryIcon="Find"
-                PlaceholderText="Buscar pokemon" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"  />
+                PlaceholderText="Buscar pokemon" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
 
-        <GridView ItemsSource="{x:Bind Path=pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="4" Grid.Row="2" ItemClick="Pokemon_Click" x:Name="gvPokemons" Margin="40,20,0,0">
+        <GridView ItemsSource="{x:Bind Path=pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="4" Grid.Row="2" ItemClick="Pokemon_Click" x:Name="gvPokemons" Margin="40,20,0,0" >
             <GridView.ItemTemplate>
                 <DataTemplate x:Name="templatePokedex" x:DataType="local:Pokemon">
                     <Grid x:Name="gridelemento" Height="175" Width="300" >

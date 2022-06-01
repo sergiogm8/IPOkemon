@@ -144,6 +144,12 @@
   <data name="selIngles.Content" xml:space="preserve">
     <value>Inglés</value>
   </data>
+  <data name="switchTema.OffContent" xml:space="preserve">
+    <value>Oscuro</value>
+  </data>
+  <data name="switchTema.OnContent" xml:space="preserve">
+    <value>Claro</value>
+  </data>
   <data name="txtAcercade.Text" xml:space="preserve">
     <value>Acerca de</value>
   </data>
@@ -153,11 +159,14 @@
   <data name="txtBienvenido.Text" xml:space="preserve">
     <value>Bienvenido a IPOkemon</value>
   </data>
-  <data name="txtBuscador.PlaceholderText" xml:space="preserve">
+  <data name="txtBuscarPokemon.PlaceholderText" xml:space="preserve">
     <value>Buscar Pokemon</value>
   </data>
   <data name="txtConfPage.Text" xml:space="preserve">
     <value>Configuración</value>
+  </data>
+  <data name="txtDesarrollado.Text" xml:space="preserve">
+    <value>Dessarrollado por:</value>
   </data>
   <data name="txtEntrenar.Text" xml:space="preserve">
     <value>Entrena a estos Pokemons</value>
@@ -171,19 +180,25 @@
   <data name="txtNotificaciones.Text" xml:space="preserve">
     <value>Notificaciones</value>
   </data>
-  <data name="txtPersonajes.Text" xml:space="preserve">
+  <data name="txtPersonaje.Text" xml:space="preserve">
     <value>Personajes</value>
+  </data>
+  <data name="txtPersonajeSel.Text" xml:space="preserve">
+    <value>Personaje seleccionado</value>
   </data>
   <data name="txtTema.Text" xml:space="preserve">
     <value>Tema de color</value>
   </data>
-  <data name="txtTemaClaro.Content" xml:space="preserve">
-    <value>Claro</value>
-  </data>
   <data name="txtTemaDefecto.Content" xml:space="preserve">
     <value>Por defecto del sistema</value>
   </data>
-  <data name="txtTemaOscuro.Content" xml:space="preserve">
-    <value>Oscuro</value>
+  <data name="txtTipoDetalle.Text" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="txtTipoPokedex.Text" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="txtVersion.Text" xml:space="preserve">
+    <value>Versión</value>
   </data>
 </root>

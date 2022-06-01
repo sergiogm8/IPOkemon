@@ -30,9 +30,6 @@
   <data name="txtBienvenido.Text" xml:space="preserve">
     <value>Welcome to IPOkemon</value>
   </data>
-  <data name="txtBuscador.PlaceholderText" xml:space="preserve">
-    <value>Search Pokemon</value>
-  </data>
   <data name="txtEntrenar.Text" xml:space="preserve">
     <value>Train these Pokemons</value>
   </data>
@@ -60,16 +57,37 @@
   <data name="txtIdioma.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="txtPersonajes.Text" xml:space="preserve">
-    <value>Characters</value>
+  <data name="txtNotificaciones.Text" xml:space="preserve">
+    <value>Notifications</value>
   </data>
   <data name="txtTema.Text" xml:space="preserve">
     <value>Color theme</value>
   </data>
-  <data name="txtTemaClaro.Content" xml:space="preserve">
+  <data name="switchTema.OffContent" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="switchTema.OnContent" xml:space="preserve">
     <value>Light</value>
   </data>
-  <data name="txtTemaOscuro.Content" xml:space="preserve">
-    <value>Dark</value>
+  <data name="txtBuscarPokemon.PlaceholderText" xml:space="preserve">
+    <value>Search Pokemon</value>
+  </data>
+  <data name="txtDesarrollado.Text" xml:space="preserve">
+    <value>Developed by:</value>
+  </data>
+  <data name="txtPersonaje.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="txtPersonajeSel.Text" xml:space="preserve">
+    <value>Selected character</value>
+  </data>
+  <data name="txtTipoDetalle.Text" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="txtTipoPokedex.Text" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="txtVersion.Text" xml:space="preserve">
+    <value>Version</value>
   </data>
 </root>

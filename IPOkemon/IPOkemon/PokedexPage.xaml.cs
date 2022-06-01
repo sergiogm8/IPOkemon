@@ -105,19 +105,22 @@ namespace IPOkemon
 
         private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-            var pokemonrecomendado = args.ChosenSuggestion.ToString();
-            foreach (var pokemon in pokemons)
+            if (args.ChosenSuggestion != null)
             {
-                if(pokemon.nombre == pokemonrecomendado)
+                var pokemonrecomendado = args.ChosenSuggestion.ToString().ToLower();
+                foreach (var pokemon in pokemons)
                 {
-                    selectedPokemon = pokemon;
+                    if(pokemon.nombre.ToLower() == pokemonrecomendado)
+                    {
+                        selectedPokemon = pokemon;
+                    }
                 }
+                frame = pokeinfo;
+                gv = gvPokemons;
+                pokeinfo.Visibility = Visibility.Visible;
+                pokeinfo.Navigate(typeof(DetallePokemon), this);
+                Grid.SetColumnSpan(gvPokemons, 2);
             }
-            frame = pokeinfo;
-            gv = gvPokemons;
-            pokeinfo.Visibility = Visibility.Visible;
-            pokeinfo.Navigate(typeof(DetallePokemon), this);
-            Grid.SetColumnSpan(gvPokemons, 2);
         }
 
         public void Pokemon_Click(Object sender, ItemClickEventArgs e)

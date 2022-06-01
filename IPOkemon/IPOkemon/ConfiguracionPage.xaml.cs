@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -149,6 +150,7 @@ namespace IPOkemon
             btnPersonaje3.IsChecked = false;
 
             padre.personaje = imgP1.Source;
+            cambioPersonajeNotif();
         }
 
         private void btnPersonaje2_Checked(object sender, RoutedEventArgs e)
@@ -157,6 +159,7 @@ namespace IPOkemon
             btnPersonaje3.IsChecked = false;
 
             padre.personaje = imgP2.Source;
+            cambioPersonajeNotif();
         }
 
         private void btnPersonaje3_Checked(object sender, RoutedEventArgs e)
@@ -165,6 +168,17 @@ namespace IPOkemon
             btnPersonaje2.IsChecked = false;
 
             padre.personaje = imgP3.Source;
+            cambioPersonajeNotif();
+        }
+
+        private void cambioPersonajeNotif()
+        {
+            new ToastContentBuilder()
+    .AddArgument("action", "Personaje")
+    .AddArgument("conversationId", 9813)
+    .AddText("Cambio de personaje")
+    .AddText("Se ha cambiado correctamente el personaje")
+    .Show();
         }
     }
 }

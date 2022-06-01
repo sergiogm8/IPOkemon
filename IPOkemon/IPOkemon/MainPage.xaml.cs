@@ -45,88 +45,6 @@ namespace IPOkemon
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
 
-            TileContent content = new TileContent()
-            {
-                Visual = new TileVisual()
-                {
-                    TileMedium = new TileBinding()
-                    {
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                 new AdaptiveText()
-                                 {
-                                    Text = "IPOkemon",
-                                    HintStyle = AdaptiveTextStyle.Subtitle
-                                 },
-                                 new AdaptiveText()
-                                 {
-                                    Text = "Un proyecto de IPO2",
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
-                                 },
-                            }
-                        }
-                    },
-                    TileWide = new TileBinding()
-                    {
-                        Branding = TileBranding.NameAndLogo,
-                        DisplayName = "Version 1.0",
-
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                new AdaptiveText()
-                                {
-                                    Text = "IPOkemon",
-                                    HintStyle = AdaptiveTextStyle.Subtitle
-                                },
-                                new AdaptiveText()
-                                {
-                                    Text = "Un poryecto de IPO 2",
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
-                                },
-                                new AdaptiveText()
-                                {
-                                    Text = "Aplicacion sobre Pokemon hecha con tecnologia UWP",
-                                    HintWrap = true,
-                                }
-                            }
-                        }
-                    },
-
-                    TileLarge = new TileBinding()
-                    {
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                new AdaptiveText()
-                                {
-                                    Text = "IPOkemon",
-                                    HintStyle = AdaptiveTextStyle.Subtitle
-                                },
-                                new AdaptiveText()
-                                {
-                                    Text = "Un Proyecto de IPO2",
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
-                                },
-                                new AdaptiveText()
-                                {
-                                    Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
-                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
-                                }
-                            }
-                        }
-                    },
-                }
-            };
-            var notification = new TileNotification(content.GetXml());
-            notification.ExpirationTime = DateTimeOffset.UtcNow.AddSeconds(30);
-            var updater = TileUpdateManager.CreateTileUpdaterForApplication();
-            updater.Update(notification);
-
             this.Loaded += MainPage_Loaded;
         }
 
@@ -166,14 +84,14 @@ namespace IPOkemon
                 icoCapturar.Source = bitmapPokeball;
             }
 
-            Pokemon azumarill = new Pokemon("Azumarill", 40, 90, "Agua", true, "Azumarill tiene unas orejas enormes, indispensables" +
+            Pokemon azumarill = new Pokemon("Azumarill", 40, 90, "Agua", false, "Azumarill tiene unas orejas enormes, indispensables" +
             " para hacer de sensores. Al aguzar el oído, este Pokémon puede identificar qué tipo de presa tiene cerca. Puede " +
             "detectarlo hasta en ríos de fuertes y rápidas corrientes.", "ms-appx:///Assets/azumarill.png");
 
             Pokemon articuno = new Pokemon("Articuno", 56, 83, "Hielo", false, "Articuno es un Pokémon pájaro legendario que puede " +
                 "controlar el hielo. El batir de sus alas congela el aire. Dicen que consigue hacer que nieve cuando vuela.", "ms-appx:///Assets/articuno.png");
 
-            Pokemon snorlax = new Pokemon("Snorlax", 38, 80, "Normal", true, "Un día cualquiera en la vida de Snorlax consiste en comer " +
+            Pokemon snorlax = new Pokemon("Snorlax", 38, 80, "Normal", false, "Un día cualquiera en la vida de Snorlax consiste en comer " +
                 "y dormir. Es un Pokémon tan dócil que es fácil ver niños usando la gran panza que tiene como lugar de juegos", "ms-appx:///Assets/snorlax.png");
 
             Pokemon aipom = new Pokemon("Aipom", 29, 76, "Normal", false, "La cola de Aipom termina en una especie de mano a la que, con un poco de cabeza, se" +
@@ -185,12 +103,50 @@ namespace IPOkemon
             Pokemon swablu = new Pokemon("Swablu", 43, 95, "Volador", true, "Swablu tiene unas alas ligeras y esponjosas que parecen nubes de algodón. A este " +
                 "Pokémon no le asusta la gente. De hecho, puede llegar a posarse en la cabeza de alguien y servirle de gorro sedoso.", "ms-appx:///Assets/swablu.png");
 
+            Pokemon togepi = new Pokemon("Togepi", 26, 65, "Hada", false, "Togepi usa los sentimientos positivos de compasión y alegría que desprenden las personas y " +
+                "los Pokémon. Este Pokémon almacena sentimientos de felicidad en su interior y después los comparte con otros.", "ms-appx:///Assets/togepi.png");
+
+            Pokemon piplup = new Pokemon("Piplup", 15, 90, "Agua", true, "No se le da bien lo de andar, se cae mucho. Pero su orgullo le hace sacar pecho como si nada"
+                , "ms-appx:///Assets/piplup.png");
+
+            Pokemon pikachu = new Pokemon("Pikachu", 34, 54, "Eléctrico", true, "Cada vez que un Pikachu se encuentra con algo nuevo, le lanza una descarga eléctrica." +
+                " Cuando se ve alguna baya chamuscada, es muy probable que sea obra de un Pikachu, ya que a veces no controlan la intensidad de la descarga.", "ms-appx:///Assets/pikachu.png");
+
+            Pokemon charmander = new Pokemon("Charmander", 14, 43, "Fuego", true, "La llama que tiene en la punta de la cola arde según sus sentimientos. Llamea levemente " +
+                "cuando está alegre y arde vigorosamente cuando está enfadado.", "ms-appx:///Assets/charmander.png");
+
+            Pokemon electrike = new Pokemon("Electrike", 5, 50, "Eléctrico", true, "Electrike genera electricidad usando la fricción de la atmósfera. En estaciones de vientos" +
+                " áridos, su cuerpo se inflama y lanza chispas de forma violenta. Suele vivir cerca de centrales eléctricas. Pero si hay algún humano cerca que le dé de comer, " +
+                "entonces se ganará su amistad. También es un gran corredor, se escapa al ojo humano.", "ms-appx:///Assets/electrike.png");
+
+            Pokemon gyarados = new Pokemon ("Gyarados", 90, 0, "Agua", true, "Es un Pokémon extremadamente violento.Se han visto bancos de estos Pokémon devorando y devastando " +
+                "ciudades enteras.Vive tanto en agua dulce como marina, pero a diferencia de Magikarp, Gyarados es muy territorial y agresivo. No dudará ni un segundo en atacar a " +
+                "cualquier Pokémon que entre en su territorio.Cuando Magikarp evoluciona a Gyarados sus células cerebrales sufren un cambio bastante exagerado y se vuelve mucho más agresivo."
+                , "ms-appx:///Assets/gyarados.png");
+
+            Pokemon garchomp = new Pokemon("Garchomp", 54, 10, "Dragón", true, "Se dice que, cuando va a velocidad máxima, sus alas crean cuchillas de viento que talan cualquier árbol"
+                , "ms-appx:///Assets/garchomp.png");
+
+            Pokemon snivy = new Pokemon("Snivy", 47, 21, "Planta", true, "Su cola, en forma de hoja, es la encargada de realizar la fotosíntesis. Si se queda sin energía, ésta se dobla hacia abajo." +
+                " Se dice que cuando son salvajes, también tienen la capacidad de adaptarse mejor al medio que les rodea, siendo esto naturalmente en bosques o selvas muy densas, aunque cuando es entrenado," +
+                " se transforma en pedante y altanero. Se dice que si cree que su entrenador no es digno de él, lo abandonará. Los Snivy son muy elegantes, y fuertes, por eso no aguantan perder de ninguna manera.", "ms-appx:///Assets/snivy.png");
+
+
+
             pokemons.Add(azumarill);
             pokemons.Add(articuno);
             pokemons.Add(snorlax);
             pokemons.Add(aipom);
             pokemons.Add(castform);
             pokemons.Add(swablu);
+            pokemons.Add(togepi);
+            pokemons.Add(piplup);
+            pokemons.Add(pikachu);
+            pokemons.Add(charmander);
+            pokemons.Add(electrike);
+            pokemons.Add(gyarados);
+            pokemons.Add(garchomp);
+            pokemons.Add(snivy);
 
             navegarAPagina("inicio");
         }

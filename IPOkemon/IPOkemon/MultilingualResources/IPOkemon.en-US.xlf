@@ -34,10 +34,6 @@
           <source>Bienvenido a IPOkemon</source>
           <target state="translated">Welcome to IPOkemon</target>
         </trans-unit>
-        <trans-unit id="txtBuscador.PlaceholderText" translate="yes" xml:space="preserve">
-          <source>Buscar Pokemon</source>
-          <target state="translated">Search Pokemon</target>
-        </trans-unit>
         <trans-unit id="txtEntrenar.Text" translate="yes" xml:space="preserve">
           <source>Entrena a estos Pokemons</source>
           <target state="translated">Train these Pokemons</target>
@@ -76,27 +72,51 @@
         </trans-unit>
         <trans-unit id="txtNotificaciones.Text" translate="yes" xml:space="preserve">
           <source>Notificaciones</source>
-          <target state="new">Notificaciones</target>
-        </trans-unit>
-        <trans-unit id="txtPersonajes.Text" translate="yes" xml:space="preserve">
-          <source>Personajes</source>
-          <target state="translated">Characters</target>
+          <target state="translated">Notifications</target>
         </trans-unit>
         <trans-unit id="txtTema.Text" translate="yes" xml:space="preserve">
           <source>Tema de color</source>
           <target state="translated">Color theme</target>
         </trans-unit>
-        <trans-unit id="txtTemaClaro.Content" translate="yes" xml:space="preserve">
-          <source>Claro</source>
-          <target state="translated">Light</target>
-        </trans-unit>
         <trans-unit id="txtTemaDefecto.Content" translate="yes" xml:space="preserve">
           <source>Por defecto del sistema</source>
           <target state="new">Por defecto del sistema</target>
         </trans-unit>
-        <trans-unit id="txtTemaOscuro.Content" translate="yes" xml:space="preserve">
+        <trans-unit id="switchTema.OffContent" translate="yes" xml:space="preserve">
           <source>Oscuro</source>
           <target state="translated">Dark</target>
+        </trans-unit>
+        <trans-unit id="switchTema.OnContent" translate="yes" xml:space="preserve">
+          <source>Claro</source>
+          <target state="translated">Light</target>
+        </trans-unit>
+        <trans-unit id="txtBuscarPokemon.PlaceholderText" translate="yes" xml:space="preserve">
+          <source>Buscar Pokemon</source>
+          <target state="translated">Search Pokemon</target>
+        </trans-unit>
+        <trans-unit id="txtDesarrollado.Text" translate="yes" xml:space="preserve">
+          <source>Dessarrollado por:</source>
+          <target state="translated">Developed by:</target>
+        </trans-unit>
+        <trans-unit id="txtPersonaje.Text" translate="yes" xml:space="preserve">
+          <source>Personajes</source>
+          <target state="translated">Characters</target>
+        </trans-unit>
+        <trans-unit id="txtPersonajeSel.Text" translate="yes" xml:space="preserve">
+          <source>Personaje seleccionado</source>
+          <target state="translated">Selected character</target>
+        </trans-unit>
+        <trans-unit id="txtTipoDetalle.Text" translate="yes" xml:space="preserve">
+          <source>Tipo:</source>
+          <target state="translated">Type:</target>
+        </trans-unit>
+        <trans-unit id="txtTipoPokedex.Text" translate="yes" xml:space="preserve">
+          <source>Tipo:</source>
+          <target state="translated">Type:</target>
+        </trans-unit>
+        <trans-unit id="txtVersion.Text" translate="yes" xml:space="preserve">
+          <source>Versión</source>
+          <target state="translated">Version</target>
         </trans-unit>
       </group>
     </body>

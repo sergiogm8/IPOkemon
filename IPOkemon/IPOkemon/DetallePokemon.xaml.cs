@@ -27,22 +27,7 @@ namespace IPOkemon
         public DetallePokemon()
         {
             this.InitializeComponent();
-            this.Loaded += DetallePokemon_Loaded;
-        }
-
-        private void DetallePokemon_Loaded(object sender, RoutedEventArgs e)
-        {
             txtExp.Text = pokemon.exp.ToString();
-            var nombrePok = pokemon.nombre.ToLower();
-
-            switch (nombrePok)
-            {
-                case "azumarill":
-                    ucAzumarill uc = new ucAzumarill();
-                    bordeUC.Children.Add(uc);
-
-                    break;
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

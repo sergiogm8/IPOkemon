@@ -9,6 +9,7 @@ using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -17,6 +18,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
@@ -30,6 +32,7 @@ namespace IPOkemon
     {
         public List<Pokemon> pokemons = new List<Pokemon>();
         public int numPokeballs = 5;
+        public ImageSource personaje;
 
         public MainPage()
         {
@@ -126,6 +129,20 @@ namespace IPOkemon
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            if ((int)ApplicationData.Current.LocalSettings.Values["themeSetting"] == 0)
+            {
+                String stringPath = "ms-appx:///Assets/ic_pokeball_claro.png";
+                Uri imageUri = new Uri(stringPath);
+                BitmapImage imageBitmap = new BitmapImage(imageUri);
+                icoCapturar.Source = imageBitmap;
+            }
+            else if((int)ApplicationData.Current.LocalSettings.Values["themeSetting"] == 1) {
+                String stringPath = "ms-appx:///Assets/ic_pokeball_oscuro.png";
+                Uri imageUri = new Uri(stringPath);
+                BitmapImage imageBitmap = new BitmapImage(imageUri);
+                icoCapturar.Source = imageBitmap;
+            }
+
             Pokemon azumarill = new Pokemon("Azumarill", 40, 90, "Agua", true, "Azumarill tiene unas orejas enormes, indispensables" +
             " para hacer de sensores. Al aguzar el oído, este Pokémon puede identificar qué tipo de presa tiene cerca. Puede " +
             "detectarlo hasta en ríos de fuertes y rápidas corrientes.", "ms-appx:///Assets/azumarill.png");

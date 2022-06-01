@@ -48,13 +48,13 @@
                     </Button>
                     <Button x:Name="btnCapturar"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="50"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnCapturar_Click" >
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Assets\ic_pokeball_claro.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
+                            <Image x:Name="icoCapturar" Source="Assets\ic_pokeball_claro.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
                             <TextBlock x:Uid="btnCapturar" Text="Capturar pokemons" Margin="30,0,0,0" Width="auto" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                     <Button x:Name="btnPokedex" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="50"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="btnPokedex_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Assets\ic_pokedex_claro.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
+                            <Image x:Name="icoPokedex" Source="Assets\ic_pokedex_claro.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20"/>
                             <TextBlock x:Uid="btnPokedex" Text="PokeDex" Margin="30,0,0,0" Width="auto" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>

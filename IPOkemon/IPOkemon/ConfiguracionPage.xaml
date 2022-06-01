@@ -38,13 +38,13 @@
         <TextBlock x:Uid="txtPersonaje" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,5" Text="Personajes" FontSize="24" FontWeight="Bold" Height="auto" Width="auto"/>
         <StackPanel Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Height="auto" Width="auto" Orientation="Horizontal" >
             <ToggleButton x:Name="btnPersonaje1" Height="100" Width="100" Margin="5" Checked="btnPersonaje1_Checked">
-                <Image Source="Assets\personaje.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto"/>
+                <Image x:Name="imgP1" Source="Assets\personaje.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto"/>
             </ToggleButton>
             <ToggleButton x:Name="btnPersonaje2" Height="100" Width="100" Margin="5" Checked="btnPersonaje2_Checked">
-                <Image Source="Assets\entrenador2.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto"/>
+                <Image x:Name="imgP2" Source="Assets\entrenador2.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto"/>
             </ToggleButton>
             <ToggleButton x:Name="btnPersonaje3" Height="100" Width="100" Margin="5" Checked="btnPersonaje3_Checked">
-                <Image Source="Assets\entrenador3.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" Margin="10"/>
+                <Image x:Name="imgP3" Source="Assets\entrenador3.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" Margin="10"/>
             </ToggleButton>
         </StackPanel>
         <TextBlock x:Uid="txtAcercade" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,5" Text="Acerca de esta aplicación" FontSize="24" FontWeight="Bold" Height="auto" Width="auto"/>

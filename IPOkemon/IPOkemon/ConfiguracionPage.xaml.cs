@@ -29,6 +29,7 @@ namespace IPOkemon
         MainPage padre;
         bool idioma= false;
 
+
         public ConfiguracionPage()
         {
             this.InitializeComponent();
@@ -81,6 +82,7 @@ namespace IPOkemon
         {
             ApplicationData.Current.LocalSettings.Values["themeSetting"] =
                                                      ((ToggleSwitch)sender).IsOn ? 0 : 1;
+
         }
 
         private void switchTema_PointerReleased(object sender, PointerRoutedEventArgs e)
@@ -143,18 +145,24 @@ namespace IPOkemon
         {
             btnPersonaje2.IsChecked = false;
             btnPersonaje3.IsChecked = false;
+
+            padre.personaje = imgP1.Source;
         }
 
         private void btnPersonaje2_Checked(object sender, RoutedEventArgs e)
         {
             btnPersonaje1.IsChecked = false;
             btnPersonaje3.IsChecked = false;
+
+            padre.personaje = imgP2.Source;
         }
 
         private void btnPersonaje3_Checked(object sender, RoutedEventArgs e)
         {
             btnPersonaje1.IsChecked = false;
             btnPersonaje2.IsChecked = false;
+
+            padre.personaje = imgP3.Source;
         }
     }
 }

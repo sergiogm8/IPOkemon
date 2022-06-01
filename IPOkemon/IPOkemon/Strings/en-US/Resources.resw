@@ -39,4 +39,37 @@
   <data name="txtFiltrar.Text" xml:space="preserve">
     <value>Filter by type:</value>
   </data>
+  <data name="estadoNotif.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="estadoNotif.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="selEspañol.Content" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="selIngles.Content" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="txtAcercade.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="txtConfPage.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="txtIdioma.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="txtPersonajes.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="txtTema.Text" xml:space="preserve">
+    <value>Color theme</value>
+  </data>
+  <data name="txtTemaClaro.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="txtTemaOscuro.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
 </root>

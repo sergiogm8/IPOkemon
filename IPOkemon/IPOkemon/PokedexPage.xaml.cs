@@ -41,9 +41,16 @@ namespace IPOkemon
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            pokemons = new List<Pokemon>();
             base.OnNavigatedTo(e);
             padre = (MainPage)e.Parameter;
-            pokemons = padre.pokemons;
+            foreach (var pokemon in padre.pokemons)
+            {
+                if (pokemon.capturado == true)
+                {
+                    pokemons.Add(pokemon);
+                }
+            }
         }
 
         private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -76,8 +83,36 @@ namespace IPOkemon
         // Handle user selecting an item, in our case just output the selected item.
         private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
-            var pokemon = args.SelectedItem as Pokemon;
-            sender.Text = pokemon.nombre;
+            var pokemonrecomendado = args.SelectedItem.ToString();
+            foreach (var pokemon in pokemons)
+            {
+                if (pokemon.nombre == pokemonrecomendado)
+                {
+                    selectedPokemon = pokemon;
+                }
+            }
+            frame = pokeinfo;
+            gv = gvPokemons;
+            pokeinfo.Visibility = Visibility.Visible;
+            pokeinfo.Navigate(typeof(DetallePokemon), this);
+            Grid.SetColumnSpan(gvPokemons, 2);
+        }
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            var pokemonrecomendado = args.ChosenSuggestion.ToString();
+            foreach (var pokemon in pokemons)
+            {
+                if(pokemon.nombre == pokemonrecomendado)
+                {
+                    selectedPokemon = pokemon;
+                }
+            }
+            frame = pokeinfo;
+            gv = gvPokemons;
+            pokeinfo.Visibility = Visibility.Visible;
+            pokeinfo.Navigate(typeof(DetallePokemon), this);
+            Grid.SetColumnSpan(gvPokemons, 2);
         }
 
         public void Pokemon_Click(Object sender, ItemClickEventArgs e)
@@ -90,5 +125,22 @@ namespace IPOkemon
             Grid.SetColumnSpan(gvPokemons,2);
         }
 
+        private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string tipo = (sender as ComboBox).SelectedItem as string;
+
+            List<Pokemon> typespokemon = new List<Pokemon>();
+
+                foreach (var pokemon in pokemons)
+                {
+                    if(pokemon.tipo.ToLower() == tipo.ToLower())
+                    {
+                        typespokemon.Add(pokemon);
+                    }
+                }
+            pokemons.Clear();
+            pokemons = typespokemon;
+            gvPokemons.UpdateLayout();
+        }
     }
 }

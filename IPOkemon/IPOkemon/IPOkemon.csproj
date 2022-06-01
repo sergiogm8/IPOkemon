@@ -115,12 +115,21 @@
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>es-ES</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="CapturarPage.xaml.cs">
       <DependentUpon>CapturarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionPage.xaml.cs">
+      <DependentUpon>ConfiguracionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DetallePokemon.xaml.cs">
       <DependentUpon>DetallePokemon.xaml</DependentUpon>
@@ -142,12 +151,39 @@
       <DependentUpon>PokeparadaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucAzumarillCapturar.xaml.cs">
+    <Compile Include="ucAvistado.xaml.cs">
+      <DependentUpon>ucAvistado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucCapturar\ucAipomCapturar.xaml.cs">
+      <DependentUpon>ucAipomCapturar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucCapturar\ucAzumarillCapturar.xaml.cs">
       <DependentUpon>ucAzumarillCapturar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ucArticunoCapturar.xaml.cs" />
-    <Compile Include="ucSnorlaxCapturar.xaml.cs">
+    <Compile Include="ucCapturar\ucArticunoCapturar.xaml.cs" />
+    <Compile Include="ucCapturar\ucSnorlaxCapturar.xaml.cs">
       <DependentUpon>ucSnorlaxCapturar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucEntrenar.xaml.cs">
+      <DependentUpon>ucEntrenar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucCastform.xaml.cs">
+      <DependentUpon>ucCastform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucAipom.xaml.cs">
+      <DependentUpon>ucAipom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucAzumarill.xaml.cs">
+      <DependentUpon>ucAzumarill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucSnorlax.xaml.cs">
+      <DependentUpon>ucSnorlax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucArticuno.xaml.cs">
+      <DependentUpon>ucArticuno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMostrar\ucSwablu.xaml.cs">
+      <DependentUpon>ucSwablu.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -156,37 +192,123 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\aipom.png" />
     <Content Include="Assets\articuno.png" />
     <Content Include="Assets\azumarill.png" />
-    <Content Include="Assets\charmander.png" />
+    <Content Include="Assets\castform.png" />
     <Content Include="Assets\entrenador2.png" />
     <Content Include="Assets\entrenador3.png" />
+    <Content Include="Assets\fondos\fondo_aipom.jpg" />
     <Content Include="Assets\fondos\fondo_articuno.png" />
     <Content Include="Assets\fondos\fondo_snorlax.jpg" />
     <Content Include="Assets\fondos\paisaje.jpg" />
     <Content Include="Assets\fondos\fondo_pokeparada.jpg" />
-    <Content Include="Assets\gengar.png" />
     <Content Include="Assets\ic_pokeball_oscuro.png" />
     <Content Include="Assets\ic_pokeball_claro.png" />
     <Content Include="Assets\ic_pokedex_claro.png" />
     <Content Include="Assets\ic_pokedex_oscuro.png" />
-    <Content Include="Assets\jigglypuff.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="Assets\mano.png" />
     <Content Include="Assets\personaje.png" />
-    <Content Include="Assets\pikachu.png" />
     <Content Include="Assets\pokeball.png" />
     <Content Include="Assets\pokestop.png" />
     <Content Include="Assets\pokestop_disabled.png" />
     <Content Include="Assets\rango.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
     <Content Include="Assets\snorlax.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\swablu.png" />
+    <Content Include="Assets\uc_aipom\batalla.png" />
+    <Content Include="Assets\uc_aipom\corazon_pokeball.png" />
+    <Content Include="Assets\uc_aipom\equipo-azul.png" />
+    <Content Include="Assets\uc_aipom\estrella.png" />
+    <Content Include="Assets\uc_aipom\flecha-hacia-arriba.png" />
+    <Content Include="Assets\uc_aipom\fondo_aipom.jpg" />
+    <Content Include="Assets\uc_aipom\pocion.png" />
+    <Content Include="Assets\uc_articuno\Copo.png" />
+    <Content Include="Assets\uc_articuno\Corazon.png" />
+    <Content Include="Assets\uc_articuno\Escudo.png" />
+    <Content Include="Assets\uc_articuno\Pocion.png" />
+    <Content Include="Assets\uc_azumarill\espiralOjo.png" />
+    <Content Include="Assets\uc_azumarill\fuerza.png" />
+    <Content Include="Assets\uc_azumarill\furia.png" />
+    <Content Include="Assets\uc_azumarill\health.png" />
+    <Content Include="Assets\uc_azumarill\paisaje.jpg" />
+    <Content Include="Assets\uc_azumarill\pocionmaxima.png" />
+    <Content Include="Assets\uc_azumarill\potion.png" />
+    <Content Include="Assets\uc_azumarill\shield.png" />
+    <Content Include="Assets\uc_azumarill\sucio.png" />
+    <Content Include="Assets\uc_azumarill\tirita.png" />
+    <Content Include="Assets\uc_Castform\102-1021879_iconos-y-figuras-de-amor-icono-de-corazon-removebg-preview.png" />
+    <Content Include="Assets\uc_Castform\escudo.png" />
+    <Content Include="Assets\uc_Castform\new_fondo.PNG" />
+    <Content Include="Assets\uc_Castform\pngwing.com.png" />
+    <Content Include="Assets\uc_snorlax\corazon.png" />
+    <Content Include="Assets\uc_snorlax\escudo.png" />
+    <Content Include="Assets\uc_snorlax\fondo.jpg" />
+    <Content Include="Assets\uc_snorlax\pEscudo.png" />
+    <Content Include="Assets\uc_snorlax\piedra.png" />
+    <Content Include="Assets\uc_snorlax\pocion.png" />
+    <Content Include="Assets\uc_swablu\ataque.png" />
+    <Content Include="Assets\uc_swablu\chispitas.png" />
+    <Content Include="Assets\uc_swablu\comida.png" />
+    <Content Include="Assets\uc_swablu\corazon.png" />
+    <Content Include="Assets\uc_swablu\escudo.png" />
+    <Content Include="Assets\uc_swablu\hambre.png" />
+    <Content Include="Assets\uc_swablu\nombre.png" />
+    <Content Include="Assets\uc_swablu\padrera_fondo.png" />
+    <Content Include="Assets\uc_swablu\pocima.png" />
+    <Content Include="Assets\uc_swablu\pokeball.png" />
+    <Content Include="Assets\uc_swablu\shiny.png" />
     <Content Include="Assets\usar_pokeparada.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +319,10 @@
     <Page Include="CapturarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguracionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DetallePokemon.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -222,31 +348,86 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ucAzumarillCapturar.xaml">
+    <Page Include="ucAvistado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucCapturar\ucAipomCapturar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ucArticunocapturar.xaml">
+    <Page Include="ucCapturar\ucAzumarillCapturar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ucSnorlaxCapturar.xaml">
+    <Page Include="ucCapturar\ucArticunocapturar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucCapturar\ucSnorlaxCapturar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucEntrenar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucMostrar\ucCastform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucAipom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucAzumarill.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucSnorlax.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucMostrar\ucArticuno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucMostrar\ucSwablu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.11</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>7.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.7.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\es-ES\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\IPOkemon.en-US.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.PriResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

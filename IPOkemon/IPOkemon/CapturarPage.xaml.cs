@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using IPOkemon;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -57,6 +58,13 @@ namespace IPOkemon
                     ucSnorlax.HorizontalAlignment = HorizontalAlignment.Center;
                     this.grid.Children.Add(ucSnorlax);
                     break;
+
+                case "aipom":
+                    ucAipomCapturar ucAipom = new ucAipomCapturar();
+                    ucAipom.VerticalAlignment = VerticalAlignment.Center;
+                    ucAipom.HorizontalAlignment = HorizontalAlignment.Center;
+                    this.grid.Children.Add(ucAipom);
+                    break;
             }
         }
 
@@ -69,7 +77,7 @@ namespace IPOkemon
                 targetPokemon.capturado = true;
                 ContentDialog contentDialog = new ContentDialog
                 {
-                    Title = "¡Pokemon capturado: !",
+                    Title = "¡ " + targetPokemon.nombre + " salvaje capturado!",
                     Content = "Se ha añadido a " + targetPokemon.nombre + " a la PokeDex",
                     PrimaryButtonText = "Continuar",
                     RequestedTheme = (ElementTheme)0,
@@ -77,7 +85,11 @@ namespace IPOkemon
                 };
                 var dialogResult = await contentDialog.ShowAsync();
 
-                if (dialogResult == ContentDialogResult.Primary) { padre.navegarAPagina("mapa"); }
+                if (dialogResult == ContentDialogResult.Primary) {
+                    
+                    padre.navegarAPagina("mapa"); 
+                }
+
             }
             else
             {
@@ -93,6 +105,10 @@ namespace IPOkemon
 
                     case "snorlax":
                         foreach (ucSnorlaxCapturar uc in this.grid.Children) { uc.volverACapturar(); }
+                        break;
+
+                    case "aipom":
+                        foreach(ucAipomCapturar uc in this.grid.Children) { uc.volverACapturar(); }
                         break;
                 }
             }

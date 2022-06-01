@@ -88,11 +88,11 @@
         <Storyboard x:Name="sbIconoClick" AutoReverse="True" RepeatBehavior="Forever">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imMano" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
                 <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="20"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="30"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imMano" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
                 <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="30"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
@@ -108,38 +108,38 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="104*"/>
-            <RowDefinition Height="489*"/>
+            <RowDefinition Height="188*"/>
+            <RowDefinition Height="190*"/>
+            <RowDefinition Height="111*"/>
             <RowDefinition Height="345*"/>
             <RowDefinition Height="62*"/>
         </Grid.RowDefinitions>
-        <Image Source="Assets/fondos/fondo_pokeparada.jpg" Grid.RowSpan="4" Grid.ColumnSpan="5" Stretch="UniformToFill" />
-        <Grid Grid.Column="1" Grid.Row="1" Width="auto" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Image x:Name="imParada" Source="Assets/usar_pokeparada.png" PointerReleased="imParada_PointerReleased" Width="400" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Image.Projection>
-                    <PlaneProjection/>
-                </Image.Projection>
-            </Image>
-            <Image x:Name="imMano" Source="Assets/mano.png" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False" Height="120" Width="120" Margin="662,243,458,471" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                <Image.RenderTransform>
-                    <CompositeTransform Rotation="-45"/>
-                </Image.RenderTransform>
-            </Image>
-        </Grid>
-        <Canvas x:Name="burbuja1" Grid.Column="2" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Width="Auto" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja1_PointerReleased">
+        <Image Source="Assets/fondos/fondo_pokeparada.jpg" Grid.RowSpan="6" Grid.ColumnSpan="5" Stretch="UniformToFill" />
+        <Image x:Name="imParada" Source="Assets/usar_pokeparada.png" PointerReleased="imParada_PointerReleased" Width="auto" Height="421" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3">
+            <Image.Projection>
+                <PlaneProjection/>
+            </Image.Projection>
+        </Image>
+        <Image x:Name="imMano" Source="Assets/mano.png" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False" Height="auto" Width="auto" UseLayoutRounding="False" d:LayoutRounding="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Margin="80,50,0,0" >
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="-45"/>
+            </Image.RenderTransform>
+        </Image>
+        <Canvas x:Name="burbuja1" Grid.Column="2" Height="0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4" Width="0" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja1_PointerReleased">
             <Canvas.RenderTransform>
                 <CompositeTransform/>
             </Canvas.RenderTransform>
             <Image Source="Assets/pokeball.png" Width="120" Height="120" Canvas.Left="-64" Canvas.Top="-206"/>
             <Ellipse Height="185" Stroke="Black" Width="185" Fill="#3327FFF6" Canvas.Left="-96" Canvas.Top="-238"/>
         </Canvas>
-        <Canvas x:Name="burbuja2" Grid.Column="2" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Width="Auto" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja2_PointerReleased">
+        <Canvas x:Name="burbuja2" Grid.Column="2" Height="0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4" Width="0" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja2_PointerReleased">
             <Canvas.RenderTransform>
                 <CompositeTransform/>
             </Canvas.RenderTransform>
             <Image Source="Assets/pokeball.png" Width="120" Height="120" Canvas.Left="-67" Canvas.Top="-210" />
             <Ellipse Height="185" Stroke="Black" Width="185" Fill="#3327FFF6" Canvas.Left="-100" Canvas.Top="-242" />
         </Canvas>
-        <Canvas x:Name="burbuja3" Grid.Column="2" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Width="Auto" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja3_PointerReleased">
+        <Canvas x:Name="burbuja3" Grid.Column="2" Height="0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="4" Width="0" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" PointerReleased="burbuja3_PointerReleased">
             <Canvas.RenderTransform>
                 <CompositeTransform/>
             </Canvas.RenderTransform>

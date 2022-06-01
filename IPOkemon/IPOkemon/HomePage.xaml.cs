@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +23,45 @@ namespace IPOkemon
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        MainPage padre;
+        List<Pokemon> pokemons;
+        
+
         public HomePage()
         {
             this.InitializeComponent();
+            this.Loaded += HomePage_Loaded;
+        }
+
+
+        private void HomePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            pokemons = padre.pokemons;
+
+            foreach (var pokemon in pokemons)
+            {
+                if (!pokemon.capturado)
+                {
+                    ucAvistado uc = new ucAvistado(pokemon);
+                    spAvistamientos.Children.Add(uc);
+                }
+                else
+                {
+                    if (pokemon.exp >= 75.0)
+                    {
+                        txtEntrenar.Visibility = Visibility.Visible;
+                        svEntrenar.Visibility = Visibility.Visible;
+                        ucEntrenar uc = new ucEntrenar(pokemon);
+                        spEntrenar.Children.Add(uc);
+                    }
+                }
+            }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            padre = (MainPage)e.Parameter;
         }
     }
 }

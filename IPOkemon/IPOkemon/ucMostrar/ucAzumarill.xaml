@@ -1,24 +1,31 @@
 ﻿<UserControl
-    x:Class="IPOkemon.ucAzumarillCapturar"
+    x:Class="IPOkemon.ucAzumarill"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IPOkemon"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="600"
+    Width="600" Height="600">
 
     <UserControl.Resources>
         <Storyboard x:Key="sbMoverCola" AutoReverse="True" RepeatBehavior="Forever">
-            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="cola" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-8.827">
-                <DoubleAnimation.EasingFunction>
-                    <BackEase EasingMode="EaseInOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
-            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="cola" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)" To="-9.809">
-                <DoubleAnimation.EasingFunction>
-                    <BackEase EasingMode="EaseInOut"/>
-                </DoubleAnimation.EasingFunction>
-            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="cola">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-8.827">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)" Storyboard.TargetName="cola">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-9.809">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sbSaltar" Completed="sbSaltar_Completed">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="cPokemon">
@@ -100,8 +107,12 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sbMovColaLento" AutoReverse="True" RepeatBehavior="Forever">
-            <DoubleAnimation Duration="00:00:01.5000000" Storyboard.TargetName="cola" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-8.827"/>
-            <DoubleAnimation Duration="00:00:01.5000000" Storyboard.TargetName="cola" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)" To="-9.809"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="cola">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-8.827"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)" Storyboard.TargetName="cola">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-9.809"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sbMovBrazosLento" AutoReverse="True" RepeatBehavior="Forever">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="brazoIzq">
@@ -308,18 +319,42 @@
                     </DiscreteObjectKeyFrame.Value>
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimation Duration="00:00:01.2000000" Storyboard.TargetName="ellipse6_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="-16.561"/>
-            <DoubleAnimation Duration="00:00:01.2000000" Storyboard.TargetName="ellipse6_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-7.865"/>
-            <DoubleAnimation Duration="00:00:01.4000000" Storyboard.TargetName="ellipse6_Copy2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="22.106"/>
-            <DoubleAnimation Duration="00:00:01.4000000" Storyboard.TargetName="ellipse6_Copy2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="6.801"/>
-            <DoubleAnimation Duration="00:00:01.6000000" Storyboard.TargetName="ellipse6_Copy3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="11.439"/>
-            <DoubleAnimation Duration="00:00:01.6000000" Storyboard.TargetName="ellipse6_Copy3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-31.865"/>
-            <DoubleAnimation Duration="00:00:01.8000000" Storyboard.TargetName="ellipse6_Copy4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="12.106"/>
-            <DoubleAnimation Duration="00:00:01.8000000" Storyboard.TargetName="ellipse6_Copy4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="19.468"/>
-            <DoubleAnimation Duration="00:00:02" Storyboard.TargetName="ellipse6_Copy5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="-18.561"/>
-            <DoubleAnimation Duration="00:00:02" Storyboard.TargetName="ellipse6_Copy5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="4.801"/>
-            <DoubleAnimation Duration="00:00:02.2000000" Storyboard.TargetName="ellipse6_Copy6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="-0.561"/>
-            <DoubleAnimation Duration="00:00:02.2000000" Storyboard.TargetName="ellipse6_Copy6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-2.532"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy1">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-16.561"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy1">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-7.865"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy2">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="22.106"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy2">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="6.801"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="11.439"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-31.865"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy4">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="12.106"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy4">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="19.468"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy5">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-18.561"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy5">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="4.801"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy6">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-0.561"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy6">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-2.532"/>
+            </DoubleAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ellipse6_Copy7">
                 <DiscreteObjectKeyFrame KeyTime="0:0:2.4" >
                     <DiscreteObjectKeyFrame.Value>
@@ -358,8 +393,86 @@
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sbFuria" AutoReverse="True" RepeatBehavior="Forever">
-            <ColorAnimation Duration="00:00:01" Storyboard.TargetName="path1" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" To="#FFFF1F1F"/>
-            <ColorAnimation Duration="00:00:01" Storyboard.TargetName="path2" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" To="#FFFF1F1F"/>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path1">
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#FFFF1F1F"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path2">
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#FFFF1F1F"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="sbIniciarFuria" Completed="sbIniciarFuria_Completed">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.8" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.9" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" >
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sbRayoBurbujaFuerza">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ellipse6_Copy">
@@ -438,18 +551,42 @@
                     </DiscreteObjectKeyFrame.Value>
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimation Duration="00:00:01.2000000" Storyboard.TargetName="ellipse6_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="-16.561"/>
-            <DoubleAnimation Duration="00:00:01.2000000" Storyboard.TargetName="ellipse6_Copy1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-7.865"/>
-            <DoubleAnimation Duration="00:00:01.2000000" Storyboard.TargetName="ellipse6_Copy2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="22.106"/>
-            <DoubleAnimation Duration="00:00:01.2000000" Storyboard.TargetName="ellipse6_Copy2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="6.801"/>
-            <DoubleAnimation Duration="00:00:01.3000000" Storyboard.TargetName="ellipse6_Copy3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="11.439"/>
-            <DoubleAnimation Duration="00:00:01.3000000" Storyboard.TargetName="ellipse6_Copy3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-31.865"/>
-            <DoubleAnimation Duration="00:00:01.3000000" Storyboard.TargetName="ellipse6_Copy4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="12.106"/>
-            <DoubleAnimation Duration="00:00:01.3000000" Storyboard.TargetName="ellipse6_Copy4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="19.468"/>
-            <DoubleAnimation Duration="00:00:01.4000000" Storyboard.TargetName="ellipse6_Copy5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="-18.561"/>
-            <DoubleAnimation Duration="00:00:01.4000000" Storyboard.TargetName="ellipse6_Copy5" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="4.801"/>
-            <DoubleAnimation Duration="00:00:01.4000000" Storyboard.TargetName="ellipse6_Copy6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" To="-0.561"/>
-            <DoubleAnimation Duration="00:00:01.4000000" Storyboard.TargetName="ellipse6_Copy6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-2.532"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy1">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-16.561"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy1">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-7.865"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy2">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="22.106"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy2">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="6.801"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="11.439"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-31.865"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy4">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="12.106"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy4">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="19.468"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy5">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-18.561"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy5">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="4.801"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse6_Copy6">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-0.561"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse6_Copy6">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-2.532"/>
+            </DoubleAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ellipse6_Copy7">
                 <DiscreteObjectKeyFrame KeyTime="0:0:1.5" >
                     <DiscreteObjectKeyFrame.Value>
@@ -593,57 +730,24 @@
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Name="sbCapturar" Completed="sbCapturar_Completed">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgPokeball" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-320"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-280"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02.6000000" Value="-280"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgPokeball" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-240"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02.6000000" Value="-240"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path6" Storyboard.TargetProperty="(UIElement.Opacity)">
-                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01.4500000" Value="0.5"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02.2000000" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="cPokemon" Storyboard.TargetProperty="(UIElement.Visibility)">
-                <DiscreteObjectKeyFrame KeyTime="00:00:01.8000000" Value="Collapsed"/>
+        <Storyboard x:Name="sbFlashingVida">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.BorderThickness)" RepeatBehavior="Forever">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Thickness>0,0,0,0</Thickness>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="00:00:01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Thickness>5,5,5,5</Thickness>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="00:00:03">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Thickness>0,0,0,0</Thickness>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgPokeball" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02.6000000" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03.4000000" Value="8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03.8000000" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:04.2000000" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:04.6000000" Value="-8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:05.4000000" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <Storyboard x:Name="sbRestaurar">
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="cPokemon" Storyboard.TargetProperty="(UIElement.Visibility)">
-                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Collapsed"/>
-                <DiscreteObjectKeyFrame KeyTime="00:00:00.6000000" Value="Visible"/>
-            </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="path6" Storyboard.TargetProperty="(UIElement.Opacity)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.5"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgPokeball" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-240.704"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="-240.704"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01.4000000" Value="6.172"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgPokeball" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-276.192"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="-276.192"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01.4000000" Value="-9.258"/>
-            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>
 
@@ -666,8 +770,22 @@
             <RowDefinition Height="78*"/>
         </Grid.RowDefinitions>
 
-        <Image x:Name="imgFondo" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="6" Source="Assets/fondos/paisaje.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Image x:Name="imgFondo" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="6" Source="/Assets/fondos/paisaje.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Path x:Name="cuadroHUD" Grid.ColumnSpan="5" Grid.Column="1" Data="M0.5,0.5 L465.28915,0.5 465.28915,50.84875 465.42711,72.011278 0.46079214,71.747743 0.5,52.069278 z" Fill="#FF3E3E3E" Margin="0.453,0,1.833,9.449" Opacity="0.85" Grid.Row="1" Grid.RowSpan="3" Stretch="Fill" Stroke="Black" StrokeThickness="0"  >
+        </Path>
+        <Viewbox x:Name="vbNombre" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Width="73.356" Height="auto" Stretch="Uniform" Margin="46.412,0,54.409,9.64">
+            <TextBlock x:Name="lblNombre" Text="Azumarill" FontFamily="Bahnschrift Light" Height="42.62" Width="112.838" FontSize="18" FontWeight="Bold" Foreground="White"/>
+        </Viewbox>
+        <ProgressBar Grid.Row="1" Grid.Column="2" Margin="5,0,54,0" Grid.ColumnSpan="3" x:Name="pbHealth" ValueChanged="pbHealth_ValueChanged" Height="26"  />
+        <Border x:Name="border" BorderBrush="Red" BorderThickness="0" Margin="5,3.5,54.23,5" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="2"/>
+        <ProgressBar x:Name="pbShield" Grid.Row="2" Grid.Column="2" Margin="5,0,54,0" Foreground="#FFFFD957" Grid.ColumnSpan="3" Height="26" />
+        <ProgressBar x:Name="pbFuerza" Grid.Row="3" Grid.Column="2"  Foreground="IndianRed" Height="20" Margin="5,4,40,14" VerticalAlignment="Stretch"   />
 
+        <Image Grid.Row="1" Grid.Column="1" Source="/Assets/uc_azumarill/health.png" Margin="8.125,0.5,0,2" ToolTipService.ToolTip="Nivel de vida"/>
+        <Image Grid.Row="2" Grid.Column="1" Source="/Assets/uc_azumarill/shield.png" Margin="8.125,2,0,2" ToolTipService.ToolTip="Nivel de escudo"/>
+        <Image Grid.Row="3" Grid.Column="1" Source="/Assets/uc_azumarill/fuerza.png" Margin="8.125,0,0,10" ToolTipService.ToolTip="Nivel de fuerza extra"/>
+        <Image x:Name="imgPotion" Source="/Assets/uc_azumarill//potion.png" PointerReleased="usarPocion" Margin="0,0.5,0,0" Grid.Column="5" Grid.Row="1" />
+        <Image x:Name="imgMaxPotion" Source="/Assets/uc_azumarill/pocionmaxima.png" PointerReleased="usarPocionMax" Margin="0,0,1.833,0.5" Grid.Column="5" Grid.Row="2" />
         <Canvas x:Name="cPokemon" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto" RenderTransformOrigin="0.5,0.5" Margin="65.502,172.303,108.675,208.297">
             <Canvas.RenderTransform>
                 <TransformGroup>
@@ -999,7 +1117,7 @@
                         </TransformGroup>
                     </Ellipse.RenderTransform>
                 </Ellipse>
-                <Image x:Name="imgODerrIzq" Source="imgs/espiralOjo.png" Canvas.Left="-4.334" Canvas.Top="-2.806" Height="20" Width="20" Visibility="Collapsed"/>
+                <Image x:Name="imgODerrIzq" Source="/Assets/uc_azumarill/espiralOjo.png" Canvas.Left="-4.334" Canvas.Top="-2.806" Height="20" Width="20" Visibility="Collapsed"/>
             </Canvas>
             <Canvas x:Name="ojoDer" Height="20.633" Canvas.Left="45.793" Canvas.Top="-44.017" Width="15.666" RenderTransformOrigin="0.5,0.5">
                 <Canvas.RenderTransform>
@@ -1040,7 +1158,7 @@
                         </TransformGroup>
                     </Ellipse.RenderTransform>
                 </Ellipse>
-                <Image x:Name="imgODerrDer" Source="imgs/espiralOjo.png" Canvas.Left="-4.334" Canvas.Top="-2.806" Height="20" Width="20" Visibility="Collapsed"/>
+                <Image x:Name="imgODerrDer" Source="/Assets/uc_azumarill/espiralOjo.png" Canvas.Left="-4.334" Canvas.Top="-2.806" Height="20" Width="20" Visibility="Collapsed"/>
             </Canvas>
             <Grid x:Name="gBoca" Height="25.194" Canvas.Left="7.324" Canvas.Top="-20.952" Width="40.195" RenderTransformOrigin="0.5,0.5">
                 <Grid.RenderTransform>
@@ -1116,7 +1234,7 @@
                 <Path x:Name="simbolCuracion13" Data="M7.237,0.5 L13.237001,0.5 13.237001,7.4183717 19.5,7.4183717 19.5,12.418372 13.236,12.418372 13.236,19.5 7.2360001,19.5 7.2360001,12.418372 0.5,12.418372 0.5,7.4183717 7.237,7.4183717 z" Fill="#FFFFD957" HorizontalAlignment="Left" Height="20" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="20" Margin="52,95.737,0,0" />
             </Grid>
             <Canvas x:Name="cTiritas" Height="249.402" Canvas.Left="-58.162" Canvas.Top="-161.469" Width="233.426" Visibility="Collapsed">
-                <Image x:Name="imgTirita1" Source="imgs/tirita.png"  Width="61.1" Height="52.574" Canvas.Top="116.248" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imgTirita1" Source="/Assets/uc_azumarill/tirita.png"  Width="61.1" Height="52.574" Canvas.Top="116.248" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -1126,7 +1244,7 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-                <Image x:Name="imgTirita1_Copy" Source="imgs/tirita.png"  Width="63.435" Height="54.583" Canvas.Left="116.332" Canvas.Top="194.819" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imgTirita1_Copy" Source="/Assets/uc_azumarill/tirita.png"  Width="63.435" Height="54.583" Canvas.Left="116.332" Canvas.Top="194.819" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -1136,7 +1254,7 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-                <Image x:Name="imgTirita1_Copy1" Source="imgs/tirita.png"  Width="70.449" Height="60.62" Canvas.Left="162.977" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imgTirita1_Copy1" Source="/Assets/uc_azumarill/tirita.png"  Width="70.449" Height="60.62" Canvas.Left="162.977" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -1148,11 +1266,11 @@
                 </Image>
             </Canvas>
             <Canvas x:Name="cManchas" Height="131.758" Canvas.Left="-50.5" Canvas.Top="-11.952" Width="143.019" Visibility="Collapsed">
-                <Image Source="imgs/sucio.png" Height="40" Width="40" Canvas.Top="10.194"/>
-                <Image Source="imgs/sucio.png" Height="40" Width="40" Canvas.Left="10.186" Canvas.Top="55.194"/>
-                <Image Source="imgs/sucio.png" Height="40" Width="40" Canvas.Left="103.019"/>
-                <Image Source="imgs/sucio.png" Height="40" Width="40" Canvas.Left="70.686" Canvas.Top="40"/>
-                <Image Source="imgs/sucio.png" Height="40" Width="40" Canvas.Left="92.686" Canvas.Top="91.758"/>
+                <Image Source="/Assets/uc_azumarill/sucio.png" Height="40" Width="40" Canvas.Top="10.194"/>
+                <Image Source="/Assets/uc_azumarill/sucio.png" Height="40" Width="40" Canvas.Left="10.186" Canvas.Top="55.194"/>
+                <Image Source="/Assets/uc_azumarill/sucio.png" Height="40" Width="40" Canvas.Left="103.019"/>
+                <Image Source="/Assets/uc_azumarill/sucio.png" Height="40" Width="40" Canvas.Left="70.686" Canvas.Top="40"/>
+                <Image Source="/Assets/uc_azumarill/sucio.png" Height="40" Width="40" Canvas.Left="92.686" Canvas.Top="91.758"/>
             </Canvas>
             <Canvas x:Name="cRayoBurbuja" Height="197.632" Canvas.Left="-127.421" Canvas.Top="-42.017" Width="240.86">
                 <Ellipse x:Name="ellipse6_Copy" Height="44.8" Stroke="#FF00DCFF" Width="46.639" StrokeThickness="0.5" RenderTransformOrigin="0.5,0.5" Opacity="0" Canvas.Left="132.443" Canvas.Top="15.416">
@@ -1398,29 +1516,30 @@
 
             </Canvas>
             <Canvas x:Name="cFuria" Height="100.562" Canvas.Left="-73.5" Canvas.Top="-82.514" Width="203.765">
-                <Image x:Name="image" Source="imgs/furia.png" Width="30" Height="30" Canvas.Left="35" Canvas.Top="30" Visibility="Collapsed" />
-                <Image x:Name="image1" Source="imgs/furia.png" Width="30" Height="30" Canvas.Left="156.939" Canvas.Top="70.562" Visibility="Collapsed"  />
-                <Image x:Name="image2" Source="imgs/furia.png" Width="30" Height="30" Canvas.Top="56.756" Visibility="Collapsed"  />
-                <Image x:Name="image3" Source="imgs/furia.png" Width="30" Height="30" Canvas.Left="173.765" Canvas.Top="30" Visibility="Collapsed"  />
-                <Image x:Name="image4" Source="imgs/furia.png" Width="30" Height="30" Canvas.Left="120.272" Canvas.Top="5.497" Visibility="Collapsed"  />
-                <Image x:Name="image5" Source="imgs/furia.png" Width="30" Height="30" Canvas.Left="15.338" Visibility="Collapsed"  />
+                <Image x:Name="image" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Left="35" Canvas.Top="30" Visibility="Collapsed" />
+                <Image x:Name="image1" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Left="156.939" Canvas.Top="70.562" Visibility="Collapsed"  />
+                <Image x:Name="image2" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Top="56.756" Visibility="Collapsed"  />
+                <Image x:Name="image3" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Left="173.765" Canvas.Top="30" Visibility="Collapsed"  />
+                <Image x:Name="image4" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Left="120.272" Canvas.Top="5.497" Visibility="Collapsed"  />
+                <Image x:Name="image5" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Left="15.338" Visibility="Collapsed"  />
             </Canvas>
         </Canvas>
-        <Canvas x:Name="canvas" Height="Auto" Grid.Row="4" Grid.Column="3" Width="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Image x:Name="imgPokeball" Source="Assets/pokeball.png" Width="100" Height="100"
-                ManipulationMode="TranslateX, TranslateY" Canvas.Left="-33" Canvas.Top="-53" PointerReleased="imgPokeball_PointerReleased">
-                <Image.RenderTransform>
-                    <CompositeTransform x:Name="mytransform" />
-                </Image.RenderTransform>
+        <Button x:Name="btn_RayoBurbuja" Content="Rayo Burbuja" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29.937" Grid.Row="5" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="auto" Click="rayoBurbuja_Click" Grid.Column="3" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  Margin="0,0,93.927,0" ToolTipService.ToolTip="Lanza un rayo de burbujas que inflige daño" FontSize="12"/>
+        <Button x:Name="btnFuria" Content="Furia" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29.937" Margin="96.677,0,0,0" Grid.Row="5" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="95" Click="btnFuria_Click" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ToolTipService.ToolTip="Es capaz de concentrar toda su furia para aumentar su poder" FontSize="12"/>
+        <Button x:Name="btnSimularDano" Content="Simular ataque recibido" Grid.Column="3" HorizontalAlignment="Stretch" Height="29.937" Grid.Row="5" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Width="auto" Click="btnSimularAt_Click" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  ToolTipService.ToolTip="Simula que recibe un ataque" RenderTransformOrigin="0.5,0.5" FontSize="12" Margin="0,0,0,15">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
 
-            </Image>
-            <Path x:Name="path6" Height="410" Stroke="Black" UseLayoutRounding="False" d:LayoutRounding="Auto" Data="M164.5,0.5 C174.4066,0.5 184.10806,1.5952955 193.53072,3.6940691 L196.72034,4.4560909 L197.96092,3.1654379 L200.28111,5.3956232 L201.53729,5.7366233 C247.824,19.060097 286.61499,56.814674 308.70608,107.52316 L310.198,111.04905 L407.75766,204.82458 L303.77432,313.004 L302.66324,315.22342 C273.51071,371.92465 222.52441,409.5 164.5,409.5 C73.9253,409.5 0.49999928,317.94223 0.5,205 C0.49999928,92.05777 73.9253,0.5 164.5,0.5 z" RenderTransformOrigin="0.402931814208599,0.5" Stretch="Fill" Width="408" Fill="#FFFF4040" Opacity="0" Canvas.Top="-570" Canvas.Left="-150">
-                <Path.RenderTransform>
-                    <CompositeTransform Rotation="-205.592"/>
-                </Path.RenderTransform>
-            </Path>
-
-        </Canvas>
+        <TextBlock x:Name="lblVida" Text="{Binding ElementName=pbHealth, Path=Value}" Grid.Column="4" HorizontalAlignment="Right" Margin="0,2.499,11.619,3.001" Grid.Row="1" Foreground="White" FontSize="14"  VerticalAlignment="Center" Width="36.015"/>
+        <TextBlock x:Name="lblEscudo" Text="{Binding ElementName=pbShield, Path=Value}" Grid.Column="4" HorizontalAlignment="Right" Margin="0,1.999,11.619,3.474" Grid.Row="2" Foreground="White" FontSize="14"  VerticalAlignment="Center" Width="36.015"/>
+        <TextBlock x:Name="lblFuerza" Text="{Binding ElementName=pbFuerza, Path=Value}" Grid.Column="2" Margin="0,0,20,0" Grid.Row="3" Foreground="White" FontSize="14" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Width="auto" />
 
     </Grid>
 </UserControl>

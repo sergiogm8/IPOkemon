@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="es-ES" target-language="en-US" original="IPOKEMON/STRINGS/ES-ES/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.1.12.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="IPOKEMON/STRINGS/ES-ES/RESOURCES.RESW" datatype="resx">
+        <trans-unit id="btnCapturar.Text" translate="yes" xml:space="preserve">
+          <source>Capturar Pokemons</source>
+          <target state="translated">Catch Pokemons</target>
+        </trans-unit>
+        <trans-unit id="btnCerrarDetPokemon.Content" translate="yes" xml:space="preserve">
+          <source>Cerrar</source>
+          <target state="translated">Close</target>
+        </trans-unit>
+        <trans-unit id="btnConfig.Text" translate="yes" xml:space="preserve">
+          <source>Configuración</source>
+          <target state="translated">Configuration</target>
+        </trans-unit>
+        <trans-unit id="btnInicio.Text" translate="yes" xml:space="preserve">
+          <source>Inicio</source>
+          <target state="translated">Home</target>
+        </trans-unit>
+        <trans-unit id="btnPokedex.Text" translate="yes" xml:space="preserve">
+          <source>PokeDex</source>
+          <target state="new">PokeDex</target>
+        </trans-unit>
+        <trans-unit id="txtAvistados.Text" translate="yes" xml:space="preserve">
+          <source>Últimos avistamientos</source>
+          <target state="translated">Last sightings</target>
+        </trans-unit>
+        <trans-unit id="txtBienvenido.Text" translate="yes" xml:space="preserve">
+          <source>Bienvenido a IPOkemon</source>
+          <target state="translated">Welcome to IPOkemon</target>
+        </trans-unit>
+        <trans-unit id="txtBuscador.PlaceholderText" translate="yes" xml:space="preserve">
+          <source>Buscar Pokemon</source>
+          <target state="translated">Search Pokemon</target>
+        </trans-unit>
+        <trans-unit id="txtEntrenar.Text" translate="yes" xml:space="preserve">
+          <source>Entrena a estos Pokemons</source>
+          <target state="translated">Train these Pokemons</target>
+        </trans-unit>
+        <trans-unit id="txtFiltrar.Text" translate="yes" xml:space="preserve">
+          <source>Filtrar por tipo:</source>
+          <target state="translated">Filter by type:</target>
+        </trans-unit>
+        <trans-unit id="estadoNotif.OffContent" translate="yes" xml:space="preserve">
+          <source>Desactivado</source>
+          <target state="new">Desactivado</target>
+        </trans-unit>
+        <trans-unit id="estadoNotif.OnContent" translate="yes" xml:space="preserve">
+          <source>Activado</source>
+          <target state="new">Activado</target>
+        </trans-unit>
+        <trans-unit id="selEspañol.Content" translate="yes" xml:space="preserve">
+          <source>Español</source>
+          <target state="new">Español</target>
+        </trans-unit>
+        <trans-unit id="selIngles.Content" translate="yes" xml:space="preserve">
+          <source>Inglés</source>
+          <target state="new">Inglés</target>
+        </trans-unit>
+        <trans-unit id="txtAcercade.Text" translate="yes" xml:space="preserve">
+          <source>Acerca de</source>
+          <target state="new">Acerca de</target>
+        </trans-unit>
+        <trans-unit id="txtConfPage.Text" translate="yes" xml:space="preserve">
+          <source>Configuración</source>
+          <target state="new">Configuración</target>
+        </trans-unit>
+        <trans-unit id="txtIdioma.Text" translate="yes" xml:space="preserve">
+          <source>Idioma</source>
+          <target state="new">Idioma</target>
+        </trans-unit>
+        <trans-unit id="txtNotificaciones.Text" translate="yes" xml:space="preserve">
+          <source>Notificaciones</source>
+          <target state="new">Notificaciones</target>
+        </trans-unit>
+        <trans-unit id="txtPersonajes.Text" translate="yes" xml:space="preserve">
+          <source>Personajes</source>
+          <target state="new">Personajes</target>
+        </trans-unit>
+        <trans-unit id="txtTema.Text" translate="yes" xml:space="preserve">
+          <source>Tema de color</source>
+          <target state="new">Tema de color</target>
+        </trans-unit>
+        <trans-unit id="txtTemaClaro.Content" translate="yes" xml:space="preserve">
+          <source>Claro</source>
+          <target state="new">Claro</target>
+        </trans-unit>
+        <trans-unit id="txtTemaDefecto.Content" translate="yes" xml:space="preserve">
+          <source>Por defecto del sistema</source>
+          <target state="new">Por defecto del sistema</target>
+        </trans-unit>
+        <trans-unit id="txtTemaOscuro.Content" translate="yes" xml:space="preserve">
+          <source>Oscuro</source>
+          <target state="new">Oscuro</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

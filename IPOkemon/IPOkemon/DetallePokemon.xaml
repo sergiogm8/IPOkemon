@@ -41,7 +41,7 @@
         <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="30,30,30,30">
             <TextBlock HorizontalAlignment="Left" Text="{x:Bind Path=pokemon.descripcion}" TextWrapping="WrapWholeWords" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="24" />
         </Border>
-        <Button Content="Cerrar" Grid.Column="1" Height="36" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="3" Width="auto" FontSize="20" Click="Button_Click" VerticalContentAlignment="Center"/>
+        <Button x:Uid="btnCerrarDetPokemon" Content="Cerrar" Grid.Column="1" Height="36" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="3" Width="auto" FontSize="20" Click="Button_Click" VerticalContentAlignment="Center"/>
         
 
     </Grid>

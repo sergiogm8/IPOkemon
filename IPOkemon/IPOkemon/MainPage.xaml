@@ -32,6 +32,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -65,8 +66,10 @@
                     </Button>
                 </Grid>
             </SplitView.Pane>
-            <Frame x:Name="frame" Grid.Row="1" Grid.Column="1">
-            </Frame>
+            <ScrollViewer>
+                <Frame x:Name="frame" Grid.Row="1" Grid.Column="1">
+                </Frame>
+            </ScrollViewer>
         </SplitView>
         <Image x:Name="imgNumPokeballs" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="auto" 
                Source="Assets/pokeball.png" Margin="0,0,100,0" Visibility="Collapsed" NineGrid="5,5,5,5"/>

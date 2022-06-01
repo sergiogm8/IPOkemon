@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Notifications;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -35,9 +37,7 @@ namespace IPOkemon
 
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(900, 700));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
-            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "en-US";
-            ResourceContext.GetForViewIndependentUse().Reset();
-            ResourceContext.GetForCurrentView();
+
 
             TileContent content = new TileContent()
             {
@@ -202,6 +202,7 @@ namespace IPOkemon
                     break;
                 case "configuracion":
                     ocultarNumPokeballs();
+                    this.frame.Navigate(typeof(ConfiguracionPage), this);
                     break;
                 case "capturar":
                     ocultarNumPokeballs();
@@ -220,6 +221,32 @@ namespace IPOkemon
             }
         }
 
+        public async void reiniciarApp()
+        {
+            ContentDialog contentDialog = new ContentDialog
+            {
+                Title = "Reiniciar aplicación",
+                Content = "Para aplicar los cambios es necesario reiniciar la aplicación",
+                PrimaryButtonText = "Reiniciar",
+                RequestedTheme = (ElementTheme)0,
+                DefaultButton = ContentDialogButton.Primary,
+            };
+            var dialogResult = await contentDialog.ShowAsync();
+
+            if (dialogResult == ContentDialogResult.Primary)
+            {
+                var result = await CoreApplication.RequestRestartAsync("Application Restart Programmatically ");
+                if (result == AppRestartFailureReason.NotInForeground ||
+                    result == AppRestartFailureReason.RestartPending ||
+                    result == AppRestartFailureReason.Other)
+                {
+                    var msgBox = new MessageDialog("Restart Failed", result.ToString());
+                    await msgBox.ShowAsync();
+                }
+            }
+
+        }
+
         private void btnInicio_Click(object sender, RoutedEventArgs e)
         {
             if (this.frame.SourcePageType != typeof(HomePage))
@@ -233,49 +260,15 @@ namespace IPOkemon
             if (this.frame.SourcePageType != typeof(PokedexPage))
             {
                 navegarAPagina("pokedex");
-            
             }
         } 
         
         private void btnConfig_Click(object sender, RoutedEventArgs e)
         {
-           // if (this.frame.SourcePageType != typeof(ConfiguracionPage))
-            //{
+            if (this.frame.SourcePageType != typeof(ConfiguracionPage))
+            {
                 navegarAPagina("configuracion");
-            //}
-        }
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.frame.SourcePageType != typeof(HomePage))
-            {
-                navegarAPagina("inicio");
             }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (this.frame.SourcePageType != typeof(MapPage))
-            {
-                navegarAPagina("mapa");
-                mostrarNumPokeballs();
-            }
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            if (this.frame.SourcePageType != typeof(PokedexPage))
-            {
-                navegarAPagina("pokedex");
-            }
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            // if (this.frame.SourcePageType != typeof(ConfiguracionPage))
-            //{
-            navegarAPagina("configuracion");
-            //}
         }
 
         public void ocultarNumPokeballs()

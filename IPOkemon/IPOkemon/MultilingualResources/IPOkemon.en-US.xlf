@@ -46,6 +46,58 @@
           <source>Filtrar por tipo:</source>
           <target state="translated">Filter by type:</target>
         </trans-unit>
+        <trans-unit id="estadoNotif.OffContent" translate="yes" xml:space="preserve">
+          <source>Desactivado</source>
+          <target state="new">Desactivado</target>
+        </trans-unit>
+        <trans-unit id="estadoNotif.OnContent" translate="yes" xml:space="preserve">
+          <source>Activado</source>
+          <target state="new">Activado</target>
+        </trans-unit>
+        <trans-unit id="selEspañol.Content" translate="yes" xml:space="preserve">
+          <source>Español</source>
+          <target state="new">Español</target>
+        </trans-unit>
+        <trans-unit id="selIngles.Content" translate="yes" xml:space="preserve">
+          <source>Inglés</source>
+          <target state="new">Inglés</target>
+        </trans-unit>
+        <trans-unit id="txtAcercade.Text" translate="yes" xml:space="preserve">
+          <source>Acerca de</source>
+          <target state="new">Acerca de</target>
+        </trans-unit>
+        <trans-unit id="txtConfPage.Text" translate="yes" xml:space="preserve">
+          <source>Configuración</source>
+          <target state="new">Configuración</target>
+        </trans-unit>
+        <trans-unit id="txtIdioma.Text" translate="yes" xml:space="preserve">
+          <source>Idioma</source>
+          <target state="new">Idioma</target>
+        </trans-unit>
+        <trans-unit id="txtNotificaciones.Text" translate="yes" xml:space="preserve">
+          <source>Notificaciones</source>
+          <target state="new">Notificaciones</target>
+        </trans-unit>
+        <trans-unit id="txtPersonajes.Text" translate="yes" xml:space="preserve">
+          <source>Personajes</source>
+          <target state="new">Personajes</target>
+        </trans-unit>
+        <trans-unit id="txtTema.Text" translate="yes" xml:space="preserve">
+          <source>Tema de color</source>
+          <target state="new">Tema de color</target>
+        </trans-unit>
+        <trans-unit id="txtTemaClaro.Content" translate="yes" xml:space="preserve">
+          <source>Claro</source>
+          <target state="new">Claro</target>
+        </trans-unit>
+        <trans-unit id="txtTemaDefecto.Content" translate="yes" xml:space="preserve">
+          <source>Por defecto del sistema</source>
+          <target state="new">Por defecto del sistema</target>
+        </trans-unit>
+        <trans-unit id="txtTemaOscuro.Content" translate="yes" xml:space="preserve">
+          <source>Oscuro</source>
+          <target state="new">Oscuro</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -128,6 +128,9 @@
     <Compile Include="CapturarPage.xaml.cs">
       <DependentUpon>CapturarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConfiguracionPage.xaml.cs">
+      <DependentUpon>ConfiguracionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DetallePokemon.xaml.cs">
       <DependentUpon>DetallePokemon.xaml</DependentUpon>
     </Compile>
@@ -316,6 +319,10 @@
     <Page Include="CapturarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguracionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DetallePokemon.xaml">
       <Generator>MSBuild:Compile</Generator>

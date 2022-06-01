@@ -86,6 +86,7 @@ namespace IPOkemon
                 var dialogResult = await contentDialog.ShowAsync();
 
                 if (dialogResult == ContentDialogResult.Primary) {
+                    
                     padre.navegarAPagina("mapa"); 
                 }
 

@@ -40,6 +40,10 @@ namespace IPOkemon
                 // Apply theme choice.
                 App.Current.RequestedTheme = (ApplicationTheme)(int)value;
             }
+            else
+            {
+                App.Current.RequestedTheme = (ApplicationTheme)(int)0;
+            }
         }
 
         /// <summary>
@@ -49,6 +53,9 @@ namespace IPOkemon
         /// <param name="e">Información detallada acerca de la solicitud y el proceso de inicio.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            //ApplicationData.Current.LocalSettings.Values["themeSetting"] = 0;
+            //Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "es-ES";
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // No repetir la inicialización de la aplicación si la ventana tiene contenido todavía,

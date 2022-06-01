@@ -21,7 +21,7 @@
            MapServiceToken="cPaNxekJD0Iyjh7kOLPM~MRQgNT3cxA6yplt-dbijWg~Av0OOR4_QSw39285dyyva17SA22PKJ1R6QGFQzwO_wr20XyF7lPDSN66l0NfKVx1" MapElementClick="MyMap_MapElementClick" TiltInteractionMode="ControlOnly" RotateInteractionMode="Disabled"/>
 
         <Image Source="Assets/rango.png" Stretch="None" IsHitTestVisible="False" Opacity="0.5"/>
-        <Image Source="Assets/personaje.png" Stretch="None" IsHitTestVisible="False"/>  
+        <Image x:Name="imgPersonaje" Source="{x:Bind padre.personaje}" Height="64" Width="64" Stretch="Fill" IsHitTestVisible="False"/>  
 
     </Grid>
 </Page>

@@ -36,13 +36,18 @@ namespace IPOkemon
         public PokedexPage()
         {
             this.InitializeComponent();
+            this.Loaded += PokedexPage_Loaded;
+        }
 
+        private void PokedexPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            comboTypes.SelectedIndex = 0;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            pokemons = new List<Pokemon>();
             base.OnNavigatedTo(e);
+            pokemons = new List<Pokemon>();
             padre = (MainPage)e.Parameter;
             foreach (var pokemon in padre.pokemons)
             {
@@ -100,19 +105,22 @@ namespace IPOkemon
 
         private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-            var pokemonrecomendado = args.ChosenSuggestion.ToString();
-            foreach (var pokemon in pokemons)
+            if (args.ChosenSuggestion != null)
             {
-                if(pokemon.nombre == pokemonrecomendado)
+                var pokemonrecomendado = args.ChosenSuggestion.ToString().ToLower();
+                foreach (var pokemon in pokemons)
                 {
-                    selectedPokemon = pokemon;
+                    if(pokemon.nombre.ToLower() == pokemonrecomendado)
+                    {
+                        selectedPokemon = pokemon;
+                    }
                 }
+                frame = pokeinfo;
+                gv = gvPokemons;
+                pokeinfo.Visibility = Visibility.Visible;
+                pokeinfo.Navigate(typeof(DetallePokemon), this);
+                Grid.SetColumnSpan(gvPokemons, 2);
             }
-            frame = pokeinfo;
-            gv = gvPokemons;
-            pokeinfo.Visibility = Visibility.Visible;
-            pokeinfo.Navigate(typeof(DetallePokemon), this);
-            Grid.SetColumnSpan(gvPokemons, 2);
         }
 
         public void Pokemon_Click(Object sender, ItemClickEventArgs e)
@@ -128,19 +136,34 @@ namespace IPOkemon
         private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string tipo = (sender as ComboBox).SelectedItem as string;
+            if ((sender as ComboBox).SelectedIndex != 0)
+            {
+                List<Pokemon> typespokemon = new List<Pokemon>();
 
-            List<Pokemon> typespokemon = new List<Pokemon>();
-
-                foreach (var pokemon in pokemons)
+                foreach (var pokemon in padre.pokemons)
                 {
-                    if(pokemon.tipo.ToLower() == tipo.ToLower())
+                    if((pokemon.tipo.ToLower() == tipo.ToLower()) && pokemon.capturado)
                     {
                         typespokemon.Add(pokemon);
                     }
                 }
-            pokemons.Clear();
-            pokemons = typespokemon;
-            gvPokemons.UpdateLayout();
+                pokemons.Clear();
+                pokemons = typespokemon;
+            }
+            else
+            {
+                pokemons.Clear();
+                List<Pokemon> typespokemon = new List<Pokemon>();
+                foreach (var pokemon in padre.pokemons)
+                {
+                    if (pokemon.capturado)
+                    {
+                        typespokemon.Add(pokemon);
+                    }
+                }
+                pokemons = typespokemon;
+            }
+            this.Bindings.Update();
         }
     }
 }

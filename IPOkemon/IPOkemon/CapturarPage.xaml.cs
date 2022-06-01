@@ -31,7 +31,6 @@ namespace IPOkemon
         {
             this.InitializeComponent();
             this.Loaded += CapturarPage_Loaded;
-
         }
 
         private void CapturarPage_Loaded(object sender, RoutedEventArgs e)
@@ -65,6 +64,13 @@ namespace IPOkemon
                     ucAipom.HorizontalAlignment = HorizontalAlignment.Center;
                     this.grid.Children.Add(ucAipom);
                     break;
+
+                case "togepi":
+                    ucTogepiCapturar ucTogepi = new ucTogepiCapturar();
+                    ucTogepi.VerticalAlignment = VerticalAlignment.Center;
+                    ucTogepi.HorizontalAlignment = HorizontalAlignment.Center;
+                    this.grid.Children.Add(ucTogepi);
+                    break;
             }
         }
 
@@ -74,10 +80,12 @@ namespace IPOkemon
 
             if (numCaptura == 3) // el numero 3 es el ganador de la captura
             {
+                padre.numPokeballs--;
+                padre.actualizarNumPokeballs();
                 targetPokemon.capturado = true;
                 ContentDialog contentDialog = new ContentDialog
                 {
-                    Title = "¡ " + targetPokemon.nombre + " salvaje capturado!",
+                    Title = "¡" + targetPokemon.nombre + " salvaje capturado!",
                     Content = "Se ha añadido a " + targetPokemon.nombre + " a la PokeDex",
                     PrimaryButtonText = "Continuar",
                     RequestedTheme = (ElementTheme)0,
@@ -86,10 +94,15 @@ namespace IPOkemon
                 var dialogResult = await contentDialog.ShowAsync();
 
                 if (dialogResult == ContentDialogResult.Primary) {
-                    
                     padre.navegarAPagina("mapa"); 
                 }
-
+                new ToastContentBuilder()
+                    .AddArgument("action", "Capturado")
+                    .AddArgument("conversationId", 9813)
+                    .AddText("Has capturado a " + targetPokemon.nombre)
+                    .AddText("Para ver más información ve a la PokeDex")
+                    .AddInlineImage(new Uri(targetPokemon.sprite))
+                    .Show();
             }
             else
             {
@@ -109,6 +122,10 @@ namespace IPOkemon
 
                     case "aipom":
                         foreach(ucAipomCapturar uc in this.grid.Children) { uc.volverACapturar(); }
+                        break;
+
+                    case "togepi":
+                        foreach (ucTogepiCapturar uc in this.grid.Children) { uc.volverACapturar(); }
                         break;
                 }
             }

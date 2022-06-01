@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
-
+    
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="105*"/>
@@ -19,30 +20,29 @@
             <ColumnDefinition Width="142*"/>
             <ColumnDefinition Width="233*"/>
         </Grid.ColumnDefinitions>
+
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{x:Bind Path=pokemon.nombre}" TextWrapping="Wrap" VerticalAlignment="Center" Height="19" Width="0"/>
         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="auto" Width="auto" Margin="150,0,0,0" >
             <TextBlock FontSize="24" Width="auto">
-                <Run Text="Tipo: "/>
+                <Run x:Uid="txtTipoDetalle" Text="Tipo: "/>
                 <Run Text="{x:Bind Path=pokemon.tipo}"/>
             </TextBlock>
-            <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" Width="auto" Height="auto" Margin="0,10,0,0">
-                <TextBlock FontSize="24" Width="auto">
+                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" Width="auto" Height="auto" Margin="0,10,0,0">
+                    <TextBlock FontSize="24" Width="auto">
                     <Run Text="Lvl: "/>
                     <Run Text="{x:Bind Path=pokemon.nivel}"/>
-                </TextBlock>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0" Height="auto">
-                    <ProgressBar Foreground="#FF1570B0" Value="{x:Bind Path=pokemon.exp}" Height="10" Width="300"/>
-                    <TextBlock Text="XP:" Margin="10,0,0,0" FontFamily="Impact" Height="auto" FontStyle="Italic" Width="auto" VerticalAlignment="Center" FontWeight="Normal" Foreground="#FF0078D7" FontSize="18"/>
-                    <TextBlock x:Name="txtExp" FontSize="18" Margin="5,0,0,0" Width="auto"/>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0" Height="auto">
+                        <ProgressBar Foreground="#FF1570B0" Value="{x:Bind Path=pokemon.exp}" Height="10" Width="300"/>
+                        <TextBlock Text="XP:" Margin="10,0,0,0" FontFamily="Impact" Height="auto" FontStyle="Italic" Width="auto" VerticalAlignment="Center" FontWeight="Normal" Foreground="#FF0078D7" FontSize="18"/>
+                        <TextBlock x:Name="txtExp" FontSize="18" Margin="5,0,0,0" Width="auto"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
         <Image HorizontalAlignment="Center" Source="{x:Bind Path=pokemon.sprite}" Height="261" VerticalAlignment="Center" Width="301" Grid.Row="1"/>
         <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="30,30,30,30">
             <TextBlock HorizontalAlignment="Left" Text="{x:Bind Path=pokemon.descripcion}" TextWrapping="WrapWholeWords" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="24" />
         </Border>
-        <Button x:Uid="btnCerrarDetPokemon" Content="Cerrar" Grid.Column="1" Height="36" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="3" Width="auto" FontSize="20" Click="Button_Click" VerticalContentAlignment="Center"/>
-        
-
+        <Button x:Uid="btnCerrarDetPokemon" Grid.Column="1" Height="36" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="3" Width="auto" FontSize="20" Click="Button_Click" VerticalContentAlignment="Center"/>
     </Grid>
 </Page>

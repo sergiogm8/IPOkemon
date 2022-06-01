@@ -7,31 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="87*"/>
-            <RowDefinition Height="200*"/>
-            <RowDefinition Height="240*"/>
-            <RowDefinition Height="275*"/>
-            <RowDefinition Height="50*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="146*"/>
-            <ColumnDefinition Width="529*"/>
-            <ColumnDefinition Width="732*"/>
-            <ColumnDefinition Width="93*"/>
-        </Grid.ColumnDefinitions>
-        <Image Grid.Row="1" Grid.Column="1" Source="Assets\personaje.png" Height="150" Width="150" HorizontalAlignment="Right" VerticalAlignment="Center" />
-        <TextBlock x:Uid="txtBienvenido" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,0" Text="Bienvenido a IPOkemon" FontSize="40" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto"/>
-        <TextBlock x:Uid="txtAvistados" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0" Text="Ultimos avistamientos" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto"/>
-        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,20" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" >
-            <StackPanel x:Name="spAvistamientos" Orientation="Horizontal" Spacing="20" Width="auto"/>
-        </ScrollViewer>
-
-        <TextBlock x:Uid="txtEntrenar" x:Name="txtEntrenar" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0" Text="Entrena a estos pokemon!" FontSize="24" FontWeight="Bold" TextWrapping="WrapWholeWords" Height="auto" Width="auto" Visibility="Collapsed"/>
-        <ScrollViewer x:Name="svEntrenar" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,60,0,10" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" Width="auto" Height="auto" Visibility="Collapsed">
-            <StackPanel x:Name="spEntrenar" Orientation="Horizontal" Spacing="20" Height="auto" Width="auto"/>
-        </ScrollViewer>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Uid="txtBienvenido" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25" FontSize="48" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+            <TextBlock x:Uid="txtPersonajeSel" Text="Personaje seleccionado" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,5" FontSize="30" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+            <Border Grid.Row="7" Grid.Column="1" Height="100" Width="100" Background="#26000000"  BorderBrush="#4d4c4b" BorderThickness="2" Margin="5,25,5,25" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Image x:Name="imgPersonaje" Source="{x:Bind padre.personaje}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <TextBlock x:Uid="txtAvistados" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,5" FontSize="30" FontWeight="Bold" TextWrapping="WrapWholeWords"/>
+            <ScrollViewer Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,25" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" >
+                <StackPanel x:Name="spAvistamientos" Orientation="Horizontal" Spacing="20" Height="auto" Width="auto" Margin="5"/>
+            </ScrollViewer>
+            <TextBlock x:Uid="txtEntrenar" x:Name="txtEntrenar" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,5" FontSize="30" FontWeight="Bold" TextWrapping="WrapWholeWords" Visibility="Collapsed"/>
+            <ScrollViewer x:Name="svEntrenar" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,5,25" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Visibility="Collapsed">
+                <StackPanel x:Name="spEntrenar" Orientation="Horizontal" Spacing="20" Height="auto" Width="auto" Margin="5"/>
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
 </Page>
+    

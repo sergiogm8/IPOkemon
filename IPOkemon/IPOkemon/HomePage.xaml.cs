@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -37,6 +38,14 @@ namespace IPOkemon
         private void HomePage_Loaded(object sender, RoutedEventArgs e)
         {
             pokemons = padre.pokemons;
+
+            if (padre.personaje == null)
+            {
+                String stringPath = "ms-appx:///Assets/personaje.png";
+                Uri imageUri = new Uri(stringPath);
+                BitmapImage imageBitmap = new BitmapImage(imageUri);
+                imgPersonaje.Source = imageBitmap;
+            }
 
             foreach (var pokemon in pokemons)
             {

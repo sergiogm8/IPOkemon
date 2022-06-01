@@ -154,6 +154,9 @@
     <Compile Include="ucAvistado.xaml.cs">
       <DependentUpon>ucAvistado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ucCapturar\ucTogepiCapturar.xaml.cs">
+      <DependentUpon>ucTogepiCapturar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ucCapturar\ucAipomCapturar.xaml.cs">
       <DependentUpon>ucAipomCapturar.xaml</DependentUpon>
     </Compile>
@@ -196,13 +199,18 @@
     <Content Include="Assets\articuno.png" />
     <Content Include="Assets\azumarill.png" />
     <Content Include="Assets\castform.png" />
+    <Content Include="Assets\charmander.png" />
+    <Content Include="Assets\electrike.png" />
     <Content Include="Assets\entrenador2.png" />
     <Content Include="Assets\entrenador3.png" />
     <Content Include="Assets\fondos\fondo_aipom.jpg" />
     <Content Include="Assets\fondos\fondo_articuno.png" />
     <Content Include="Assets\fondos\fondo_snorlax.jpg" />
+    <Content Include="Assets\fondos\fondo_togepi.jpg" />
     <Content Include="Assets\fondos\paisaje.jpg" />
     <Content Include="Assets\fondos\fondo_pokeparada.jpg" />
+    <Content Include="Assets\garchomp.png" />
+    <Content Include="Assets\gyarados.png" />
     <Content Include="Assets\ic_pokeball_oscuro.png" />
     <Content Include="Assets\ic_pokeball_claro.png" />
     <Content Include="Assets\ic_pokedex_claro.png" />
@@ -214,6 +222,8 @@
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="Assets\mano.png" />
     <Content Include="Assets\personaje.png" />
+    <Content Include="Assets\pikachu.png" />
+    <Content Include="Assets\piplup.png" />
     <Content Include="Assets\pokeball.png" />
     <Content Include="Assets\pokestop.png" />
     <Content Include="Assets\pokestop_disabled.png" />
@@ -223,6 +233,7 @@
     <Content Include="Assets\SmallTile.scale-150.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\snivy.png" />
     <Content Include="Assets\snorlax.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
@@ -256,6 +267,7 @@
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Assets\swablu.png" />
+    <Content Include="Assets\togepi.png" />
     <Content Include="Assets\uc_aipom\batalla.png" />
     <Content Include="Assets\uc_aipom\corazon_pokeball.png" />
     <Content Include="Assets\uc_aipom\equipo-azul.png" />
@@ -351,6 +363,10 @@
     <Page Include="ucAvistado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucCapturar\ucTogepiCapturar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ucCapturar\ucAipomCapturar.xaml">
       <Generator>MSBuild:Compile</Generator>

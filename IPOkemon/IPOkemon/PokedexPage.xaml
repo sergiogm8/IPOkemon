@@ -10,29 +10,33 @@
 
     <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="147*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="260*"/>
-            <ColumnDefinition Width="951*"/>
+            <ColumnDefinition Width="141"/>
+            <ColumnDefinition Width="193"/>
+            <ColumnDefinition Width="250.4"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="39*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="893*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Filtrar por tipo:" TextWrapping="WrapWholeWords" Width="auto" Height="auto" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center"  />
-        <ComboBox x:Name="comboTypes" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="100" SelectionChanged="comboTypes_SelectionChanged" >
+        <TextBlock x:Uid="txtFiltrar" TextWrapping="WrapWholeWords" Width="auto" Height="auto" HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center"  />
+        <ComboBox x:Name="comboTypes" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Width="100" SelectionChanged="comboTypes_SelectionChanged" >
+            <x:String>Todos</x:String>
             <x:String>Fuego</x:String>
             <x:String>Agua</x:String>
             <x:String>Planta</x:String>
             <x:String>Hielo</x:String>
             <x:String>Normal</x:String>
             <x:String>Volador</x:String>
+            <x:String>Hada</x:String>
+            <x:String>Eléctrico</x:String>
+            <x:String>Dragón</x:String>
+            
         </ComboBox>
-        <AutoSuggestBox x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15" QuerySubmitted="AutoSuggestBox_QuerySubmitted" 
+        <AutoSuggestBox x:Uid="txtBuscarPokemon" x:Name="buscador" TextChanged="AutoSuggestBox_TextChanged" CornerRadius="15" QuerySubmitted="AutoSuggestBox_QuerySubmitted" 
                 SuggestionChosen="AutoSuggestBox_SuggestionChosen" AutomationProperties.Name="Basic AutoSuggestBox"
                 QueryIcon="Find"
-                PlaceholderText="Buscar pokemon" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                PlaceholderText="Buscar pokemon" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
 
         <GridView ItemsSource="{x:Bind Path=pokemons}" IsItemClickEnabled="True" Grid.ColumnSpan="4" Grid.Row="2" ItemClick="Pokemon_Click" x:Name="gvPokemons" Margin="40,20,0,0" >
             <GridView.ItemTemplate>
@@ -45,7 +49,7 @@
                             </Border>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Bind Path=nombre}"/>
-                                <TextBlock><Run Text="Tipo: "/><Run Text=" "/><Run Text="{x:Bind Path=tipo}"/></TextBlock>
+                                <TextBlock><Run x:Uid="txtTipoPokedex" Text="Tipo: "/><Run Text=" "/><Run Text="{x:Bind Path=tipo}"/></TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -64,6 +68,7 @@
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
+
         <Frame Grid.Column="3" Margin="0,0,0,10" Grid.Row="2" x:Name="pokeinfo" Visibility="Collapsed"/>
 
     </Grid>

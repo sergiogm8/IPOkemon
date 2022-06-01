@@ -23,7 +23,6 @@ namespace IPOkemon
     public sealed partial class DetallePokemon : Page
     {
         public Pokemon pokemon = PokedexPage.selectedPokemon;
-        
 
         public DetallePokemon()
         {

@@ -19,6 +19,7 @@ using Windows.Storage;
 using Windows.Graphics.Imaging;
 using Windows.System;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Media.Imaging;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -46,12 +47,20 @@ namespace IPOkemon
         {
             this.InitializeComponent();
             this.Loaded += MapPage_Loaded; 
+
         }
 
         private void MapPage_Loaded(object sender, RoutedEventArgs e)
         {
             pokemons = padre.pokemons;
             popularListaNombresPokemon();
+            if (padre.personaje == null)
+            {
+                String stringPath = "ms-appx:///Assets/personaje.png";
+                Uri imageUri = new Uri(stringPath);
+                BitmapImage imageBitmap = new BitmapImage(imageUri);
+                imgPersonaje.Source = imageBitmap;
+            }
             startMap();
         }
 

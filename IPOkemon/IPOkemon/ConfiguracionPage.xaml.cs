@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -81,6 +82,7 @@ namespace IPOkemon
         {
             ApplicationData.Current.LocalSettings.Values["themeSetting"] =
                                                      ((ToggleSwitch)sender).IsOn ? 0 : 1;
+
         }
 
         private void switchTema_PointerReleased(object sender, PointerRoutedEventArgs e)
@@ -91,7 +93,10 @@ namespace IPOkemon
         private void cbIdioma_Loaded(object sender, RoutedEventArgs e)
         {
             var idioma = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
-
+            if (idioma == null)
+            {
+                cbIdioma.SelectedIndex = 0;
+            }
             switch (idioma)
             {
                 case "es-ES":
@@ -143,18 +148,37 @@ namespace IPOkemon
         {
             btnPersonaje2.IsChecked = false;
             btnPersonaje3.IsChecked = false;
+
+            padre.personaje = imgP1.Source;
+            cambioPersonajeNotif();
         }
 
         private void btnPersonaje2_Checked(object sender, RoutedEventArgs e)
         {
             btnPersonaje1.IsChecked = false;
             btnPersonaje3.IsChecked = false;
+
+            padre.personaje = imgP2.Source;
+            cambioPersonajeNotif();
         }
 
         private void btnPersonaje3_Checked(object sender, RoutedEventArgs e)
         {
             btnPersonaje1.IsChecked = false;
             btnPersonaje2.IsChecked = false;
+
+            padre.personaje = imgP3.Source;
+            cambioPersonajeNotif();
+        }
+
+        private void cambioPersonajeNotif()
+        {
+            new ToastContentBuilder()
+    .AddArgument("action", "Personaje")
+    .AddArgument("conversationId", 9813)
+    .AddText("Cambio de personaje")
+    .AddText("Se ha cambiado correctamente el personaje")
+    .Show();
         }
     }
 }

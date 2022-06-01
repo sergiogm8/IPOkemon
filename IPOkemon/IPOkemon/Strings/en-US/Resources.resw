@@ -30,13 +30,64 @@
   <data name="txtBienvenido.Text" xml:space="preserve">
     <value>Welcome to IPOkemon</value>
   </data>
-  <data name="txtBuscador.PlaceholderText" xml:space="preserve">
-    <value>Search Pokemon</value>
-  </data>
   <data name="txtEntrenar.Text" xml:space="preserve">
     <value>Train these Pokemons</value>
   </data>
   <data name="txtFiltrar.Text" xml:space="preserve">
     <value>Filter by type:</value>
+  </data>
+  <data name="estadoNotif.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="estadoNotif.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="selEspañol.Content" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="selIngles.Content" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="txtAcercade.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="txtConfPage.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="txtIdioma.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="txtNotificaciones.Text" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="txtTema.Text" xml:space="preserve">
+    <value>Color theme</value>
+  </data>
+  <data name="switchTema.OffContent" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="switchTema.OnContent" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="txtBuscarPokemon.PlaceholderText" xml:space="preserve">
+    <value>Search Pokemon</value>
+  </data>
+  <data name="txtDesarrollado.Text" xml:space="preserve">
+    <value>Developed by:</value>
+  </data>
+  <data name="txtPersonaje.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="txtPersonajeSel.Text" xml:space="preserve">
+    <value>Selected character</value>
+  </data>
+  <data name="txtTipoDetalle.Text" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="txtTipoPokedex.Text" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="txtVersion.Text" xml:space="preserve">
+    <value>Version</value>
   </data>
 </root>

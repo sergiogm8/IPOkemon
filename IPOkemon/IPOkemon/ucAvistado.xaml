@@ -6,11 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Height="auto"
-    Width ="auto">
-
-    <Grid Width="auto">
-        <Border Background="Black"  BorderBrush="#4d4c4b" BorderThickness="1" Opacity="0.2"/>
-        <Image x:Name="imgSprite" Width="auto" Margin="20" Height="auto" Source="{Binding sprite}"/>
+    Height="100"
+    Width ="100">
+    <Grid>
+        <Border Background="#26000000"  BorderBrush="#4d4c4b" BorderThickness="2">
+            <Image x:Name="imgSprite" Margin="5" Source="{Binding sprite}"/>
+        </Border>
     </Grid>
 </UserControl>

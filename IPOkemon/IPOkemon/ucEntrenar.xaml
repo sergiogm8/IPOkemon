@@ -6,19 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Height="auto"
-    Width="auto">
-
-    <Grid Width="auto">
-        <Border Background="Black" BorderBrush="#4d4c4b" BorderThickness="1" Opacity="0.2" Width="auto" Height="auto"/>
-        <StackPanel Orientation="Vertical" Spacing="5" HorizontalAlignment="Stretch" Width="auto" Height="auto">
-            <Image x:Name="imgPokemon" Height="auto" Width="auto" MaxHeight="112" Source="{Binding sprite}"/>
-            <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Width="auto" Height="auto">
-                <TextBlock x:Name="txtNombre" Text="{Binding nombre}" Width="auto"/>
-                <TextBlock x:Name="txtNivel" Width="auto"/>
+    Height="200"
+    Width="200">
+    <Grid>
+        <Border Background="#26000000"  BorderBrush="#4d4c4b" BorderThickness="2">
+            <StackPanel Orientation="Vertical" Spacing="5" HorizontalAlignment="Stretch" Width="auto" Height="auto" Margin="5">
+                <Image x:Name="imgPokemon" Height="100" Width="100" Source="{Binding sprite}" Margin="5"/>
+                <StackPanel Orientation="Horizontal" Spacing="15" HorizontalAlignment="Center" Width="auto" Height="auto">
+                    <TextBlock x:Name="txtNombre" Text="{Binding nombre}" Width="auto"/>
+                    <TextBlock x:Name="txtNivel" Width="auto"/>
+                </StackPanel>
+                <ProgressBar x:Name="pbExp" Height="10" Value="{Binding exp}" Margin="5" HorizontalAlignment="Stretch"/>
+                <TextBlock x:Name="txtExpRestante" Width="auto" HorizontalAlignment="Center" Height="auto"/>
             </StackPanel>
-            <ProgressBar x:Name="pbExp" Height="10" Value="{Binding exp}" Margin="5,0,5,0" HorizontalAlignment="Stretch" Width="auto"/>
-            <TextBlock x:Name="txtExpRestante" Width="auto" HorizontalAlignment="Center" Height="auto"/>
-        </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

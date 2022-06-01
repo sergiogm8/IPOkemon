@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     d:DesignHeight="600"
     d:DesignWidth="600"
-    Width="600" Height="600">
+    Width="500" Height="390">
 
     <UserControl.Resources>
         <Storyboard x:Key="sbMoverCola" AutoReverse="True" RepeatBehavior="Forever">
@@ -730,25 +730,7 @@
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Name="sbFlashingVida">
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.BorderThickness)" RepeatBehavior="Forever">
-                <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                    <DiscreteObjectKeyFrame.Value>
-                        <Thickness>0,0,0,0</Thickness>
-                    </DiscreteObjectKeyFrame.Value>
-                </DiscreteObjectKeyFrame>
-                <DiscreteObjectKeyFrame KeyTime="00:00:01">
-                    <DiscreteObjectKeyFrame.Value>
-                        <Thickness>5,5,5,5</Thickness>
-                    </DiscreteObjectKeyFrame.Value>
-                </DiscreteObjectKeyFrame>
-                <DiscreteObjectKeyFrame KeyTime="00:00:03">
-                    <DiscreteObjectKeyFrame.Value>
-                        <Thickness>0,0,0,0</Thickness>
-                    </DiscreteObjectKeyFrame.Value>
-                </DiscreteObjectKeyFrame>
-            </ObjectAnimationUsingKeyFrames>
-        </Storyboard>
+        <Storyboard x:Name="sbFlashingVida"/>
     </UserControl.Resources>
 
     <Grid>
@@ -769,23 +751,6 @@
             <RowDefinition Height="381*"/>
             <RowDefinition Height="78*"/>
         </Grid.RowDefinitions>
-
-        <Image x:Name="imgFondo" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="6" Source="/Assets/fondos/paisaje.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Path x:Name="cuadroHUD" Grid.ColumnSpan="5" Grid.Column="1" Data="M0.5,0.5 L465.28915,0.5 465.28915,50.84875 465.42711,72.011278 0.46079214,71.747743 0.5,52.069278 z" Fill="#FF3E3E3E" Margin="0.453,0,1.833,9.449" Opacity="0.85" Grid.Row="1" Grid.RowSpan="3" Stretch="Fill" Stroke="Black" StrokeThickness="0"  >
-        </Path>
-        <Viewbox x:Name="vbNombre" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" Width="73.356" Height="auto" Stretch="Uniform" Margin="46.412,0,54.409,9.64">
-            <TextBlock x:Name="lblNombre" Text="Azumarill" FontFamily="Bahnschrift Light" Height="42.62" Width="112.838" FontSize="18" FontWeight="Bold" Foreground="White"/>
-        </Viewbox>
-        <ProgressBar Grid.Row="1" Grid.Column="2" Margin="5,0,54,0" Grid.ColumnSpan="3" x:Name="pbHealth" ValueChanged="pbHealth_ValueChanged" Height="26"  />
-        <Border x:Name="border" BorderBrush="Red" BorderThickness="0" Margin="5,3.5,54.23,5" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="2"/>
-        <ProgressBar x:Name="pbShield" Grid.Row="2" Grid.Column="2" Margin="5,0,54,0" Foreground="#FFFFD957" Grid.ColumnSpan="3" Height="26" />
-        <ProgressBar x:Name="pbFuerza" Grid.Row="3" Grid.Column="2"  Foreground="IndianRed" Height="20" Margin="5,4,40,14" VerticalAlignment="Stretch"   />
-
-        <Image Grid.Row="1" Grid.Column="1" Source="/Assets/uc_azumarill/health.png" Margin="8.125,0.5,0,2" ToolTipService.ToolTip="Nivel de vida"/>
-        <Image Grid.Row="2" Grid.Column="1" Source="/Assets/uc_azumarill/shield.png" Margin="8.125,2,0,2" ToolTipService.ToolTip="Nivel de escudo"/>
-        <Image Grid.Row="3" Grid.Column="1" Source="/Assets/uc_azumarill/fuerza.png" Margin="8.125,0,0,10" ToolTipService.ToolTip="Nivel de fuerza extra"/>
-        <Image x:Name="imgPotion" Source="/Assets/uc_azumarill//potion.png" PointerReleased="usarPocion" Margin="0,0.5,0,0" Grid.Column="5" Grid.Row="1" />
-        <Image x:Name="imgMaxPotion" Source="/Assets/uc_azumarill/pocionmaxima.png" PointerReleased="usarPocionMax" Margin="0,0,1.833,0.5" Grid.Column="5" Grid.Row="2" />
         <Canvas x:Name="cPokemon" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto" RenderTransformOrigin="0.5,0.5" Margin="65.502,172.303,108.675,208.297">
             <Canvas.RenderTransform>
                 <TransformGroup>
@@ -1524,22 +1489,6 @@
                 <Image x:Name="image5" Source="/Assets/uc_azumarill/furia.png" Width="30" Height="30" Canvas.Left="15.338" Visibility="Collapsed"  />
             </Canvas>
         </Canvas>
-        <Button x:Name="btn_RayoBurbuja" Content="Rayo Burbuja" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29.937" Grid.Row="5" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="auto" Click="rayoBurbuja_Click" Grid.Column="3" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  Margin="0,0,93.927,0" ToolTipService.ToolTip="Lanza un rayo de burbujas que inflige daño" FontSize="12"/>
-        <Button x:Name="btnFuria" Content="Furia" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29.937" Margin="96.677,0,0,0" Grid.Row="5" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="95" Click="btnFuria_Click" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ToolTipService.ToolTip="Es capaz de concentrar toda su furia para aumentar su poder" FontSize="12"/>
-        <Button x:Name="btnSimularDano" Content="Simular ataque recibido" Grid.Column="3" HorizontalAlignment="Stretch" Height="29.937" Grid.Row="5" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Width="auto" Click="btnSimularAt_Click" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  ToolTipService.ToolTip="Simula que recibe un ataque" RenderTransformOrigin="0.5,0.5" FontSize="12" Margin="0,0,0,15">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-
-        <TextBlock x:Name="lblVida" Text="{Binding ElementName=pbHealth, Path=Value}" Grid.Column="4" HorizontalAlignment="Right" Margin="0,2.499,11.619,3.001" Grid.Row="1" Foreground="White" FontSize="14"  VerticalAlignment="Center" Width="36.015"/>
-        <TextBlock x:Name="lblEscudo" Text="{Binding ElementName=pbShield, Path=Value}" Grid.Column="4" HorizontalAlignment="Right" Margin="0,1.999,11.619,3.474" Grid.Row="2" Foreground="White" FontSize="14"  VerticalAlignment="Center" Width="36.015"/>
-        <TextBlock x:Name="lblFuerza" Text="{Binding ElementName=pbFuerza, Path=Value}" Grid.Column="2" Margin="0,0,20,0" Grid.Row="3" Foreground="White" FontSize="14" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Width="auto" />
 
     </Grid>
 </UserControl>

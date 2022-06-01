@@ -10,6 +10,7 @@ using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.UI.Core;
 using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -41,6 +42,8 @@ namespace IPOkemon
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(900, 700));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
 
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
 
             TileContent content = new TileContent()
             {
@@ -127,27 +130,47 @@ namespace IPOkemon
             this.Loaded += MainPage_Loaded;
         }
 
+        private void opcionVolver(object sender, BackRequestedEventArgs e)
+        {
+            if (frame.BackStack.Any())
+            {
+                frame.GoBack();
+            }
+        }
+
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             if ((int)ApplicationData.Current.LocalSettings.Values["themeSetting"] == 0)
             {
-                String stringPath = "ms-appx:///Assets/ic_pokeball_claro.png";
-                Uri imageUri = new Uri(stringPath);
-                BitmapImage imageBitmap = new BitmapImage(imageUri);
-                icoCapturar.Source = imageBitmap;
+                String pathPokeball = "ms-appx:///Assets/ic_pokeball_claro.png";
+                Uri uriPokeball = new Uri(pathPokeball);
+                BitmapImage bitmapPokeball = new BitmapImage(uriPokeball);
+
+                String pathPokedex = "ms-appx:///Assets/ic_pokedex_claro.png";
+                Uri uriPokedex = new Uri(pathPokedex);
+                BitmapImage bitmapPokedex = new BitmapImage(uriPokedex);
+
+                icoPokedex.Source = bitmapPokedex;
+                icoCapturar.Source = bitmapPokeball;
             }
             else if((int)ApplicationData.Current.LocalSettings.Values["themeSetting"] == 1) {
-                String stringPath = "ms-appx:///Assets/ic_pokeball_oscuro.png";
-                Uri imageUri = new Uri(stringPath);
-                BitmapImage imageBitmap = new BitmapImage(imageUri);
-                icoCapturar.Source = imageBitmap;
+                String pathPokeball = "ms-appx:///Assets/ic_pokeball_oscuro.png";
+                Uri uriPokeball = new Uri(pathPokeball);
+                BitmapImage bitmapPokeball = new BitmapImage(uriPokeball);
+
+                String pathPokedex = "ms-appx:///Assets/ic_pokedex_oscuro.png";
+                Uri uriPokedex = new Uri(pathPokedex);
+                BitmapImage bitmapPokedex = new BitmapImage(uriPokedex);
+
+                icoPokedex.Source = bitmapPokedex;
+                icoCapturar.Source = bitmapPokeball;
             }
 
             Pokemon azumarill = new Pokemon("Azumarill", 40, 90, "Agua", true, "Azumarill tiene unas orejas enormes, indispensables" +
             " para hacer de sensores. Al aguzar el oído, este Pokémon puede identificar qué tipo de presa tiene cerca. Puede " +
             "detectarlo hasta en ríos de fuertes y rápidas corrientes.", "ms-appx:///Assets/azumarill.png");
 
-            Pokemon articuno = new Pokemon("Articuno", 56, 83, "Hielo", true, "Articuno es un Pokémon pájaro legendario que puede " +
+            Pokemon articuno = new Pokemon("Articuno", 56, 83, "Hielo", false, "Articuno es un Pokémon pájaro legendario que puede " +
                 "controlar el hielo. El batir de sus alas congela el aire. Dicen que consigue hacer que nieve cuando vuela.", "ms-appx:///Assets/articuno.png");
 
             Pokemon snorlax = new Pokemon("Snorlax", 38, 80, "Normal", true, "Un día cualquiera en la vida de Snorlax consiste en comer " +
@@ -156,7 +179,7 @@ namespace IPOkemon
             Pokemon aipom = new Pokemon("Aipom", 29, 76, "Normal", false, "La cola de Aipom termina en una especie de mano a la que, con un poco de cabeza, se" +
                 " le puede dar muy buen uso. Pero hay un problema: como se ha acostumbrado a usarla mucho, las de verdad se le han vuelto algo torponas.", "ms-appx:///Assets/aipom.png");
 
-            Pokemon castform = new Pokemon("Castform", 23, 78, "Normal", false, "Castform se vale del poder de la naturaleza para tomar el aspecto del sol, la " +
+            Pokemon castform = new Pokemon("Castform", 23, 78, "Normal", true, "Castform se vale del poder de la naturaleza para tomar el aspecto del sol, la " +
                 "lluvia o nubarrones de nieve. El estado de ánimo de este Pokémon varía según el clima.", "ms-appx:///Assets/castform.png");
 
             Pokemon swablu = new Pokemon("Swablu", 43, 95, "Volador", true, "Swablu tiene unas alas ligeras y esponjosas que parecen nubes de algodón. A este " +
@@ -261,7 +284,6 @@ namespace IPOkemon
                     await msgBox.ShowAsync();
                 }
             }
-
         }
 
         private void btnInicio_Click(object sender, RoutedEventArgs e)
@@ -304,8 +326,6 @@ namespace IPOkemon
         public void actualizarNumPokeballs()
         {
             this.txtNumPokeballs.Text = "X" + numPokeballs.ToString();
-        }
-
-        
+        } 
     }
 }

@@ -29,7 +29,6 @@ namespace IPOkemon
         MainPage padre;
         bool idioma= false;
 
-
         public ConfiguracionPage()
         {
             this.InitializeComponent();
@@ -93,7 +92,10 @@ namespace IPOkemon
         private void cbIdioma_Loaded(object sender, RoutedEventArgs e)
         {
             var idioma = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
-
+            if (idioma == null)
+            {
+                cbIdioma.SelectedIndex = 0;
+            }
             switch (idioma)
             {
                 case "es-ES":

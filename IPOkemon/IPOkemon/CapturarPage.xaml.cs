@@ -31,7 +31,6 @@ namespace IPOkemon
         {
             this.InitializeComponent();
             this.Loaded += CapturarPage_Loaded;
-
         }
 
         private void CapturarPage_Loaded(object sender, RoutedEventArgs e)
@@ -74,10 +73,12 @@ namespace IPOkemon
 
             if (numCaptura == 3) // el numero 3 es el ganador de la captura
             {
+                padre.numPokeballs--;
+                padre.actualizarNumPokeballs();
                 targetPokemon.capturado = true;
                 ContentDialog contentDialog = new ContentDialog
                 {
-                    Title = "¡ " + targetPokemon.nombre + " salvaje capturado!",
+                    Title = "¡" + targetPokemon.nombre + " salvaje capturado!",
                     Content = "Se ha añadido a " + targetPokemon.nombre + " a la PokeDex",
                     PrimaryButtonText = "Continuar",
                     RequestedTheme = (ElementTheme)0,
@@ -86,7 +87,6 @@ namespace IPOkemon
                 var dialogResult = await contentDialog.ShowAsync();
 
                 if (dialogResult == ContentDialogResult.Primary) {
-                    
                     padre.navegarAPagina("mapa"); 
                 }
 
